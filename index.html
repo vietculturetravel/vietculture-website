@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viet Culture - Travel Your Way | Du lịch khám phá Việt Nam</title>
+  <meta name="description" content="Công ty TNHH Du lịch và Dịch vụ Viet Culture - Khám phá Việt Nam theo cách của bạn. Dịch vụ tour du lịch trong nước và quốc tế chuyên nghiệp." />
+  <link rel="icon" type="image/jpeg" href="assets/logo-icon.jpg" />
+
+  <!-- Google Fonts: Playfair Display (sang trọng) + Be Vietnam Pro (hiện đại, hỗ trợ tiếng Việt tốt) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+       VIET CULTURE - DESIGN SYSTEM
+       Tone màu chính: vàng mặt trời + xanh dương biển cả
+       Phong cách: sang trọng, hiện đại, trẻ trung
+       ========================================================= */
+    :root {
+      --color-primary: #1A56DB;       /* Xanh dương từ logo */
+      --color-primary-dark: #0E3A99;
+      --color-primary-light: #E8F0FE;
+      --color-accent: #FFD60A;        /* Vàng mặt trời từ logo */
+      --color-accent-dark: #E5B800;
+      --color-dark: #0A1628;          /* Xanh navy đậm cho text */
+      --color-text: #1F2937;
+      --color-text-muted: #6B7280;
+      --color-bg: #FFFFFF;
+      --color-bg-soft: #FAFBFC;
+      --color-bg-cream: #FFFAEB;      /* Vàng nhạt cho background */
+      --color-border: #E5E7EB;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+
+      --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.06);
+      --shadow-md: 0 8px 24px rgba(10, 22, 40, 0.08);
+      --shadow-lg: 0 20px 60px rgba(10, 22, 40, 0.12);
+      --shadow-blue: 0 12px 32px rgba(26, 86, 219, 0.25);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 32px;
+
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============ NAVIGATION ============ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.6);
+      transition: all var(--transition);
+    }
+
+    .nav.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-logo-text .brand {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--color-primary);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo-text .tagline {
+      font-size: 11px;
+      color: var(--color-accent-dark);
+      font-style: italic;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-text);
+      position: relative;
+      transition: color var(--transition);
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transition: width var(--transition);
+    }
+
+    .nav-menu a:hover {
+      color: var(--color-primary);
+    }
+
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--color-primary);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-blue);
+    }
+
+    .nav-cta:hover {
+      background: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(26, 86, 219, 0.35);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--color-dark);
+      margin: 5px 0;
+      transition: all var(--transition);
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #FFFAEB 0%, #FFFFFF 50%, #E8F0FE 100%);
+    }
+
+    .hero-bg-decoration {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-sun {
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 214, 10, 0.4) 0%, rgba(255, 214, 10, 0) 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .hero-circle {
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(26, 86, 219, 0.08) 0%, rgba(26, 86, 219, 0) 70%);
+      border-radius: 50%;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(5deg); }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      animation: slideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 214, 10, 0.15);
+      border: 1px solid rgba(255, 214, 10, 0.4);
+      color: var(--color-accent-dark);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: '✦';
+      color: var(--color-accent);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5.5vw, 68px);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--color-dark);
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .accent {
+      color: var(--color-primary);
+      font-style: italic;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero h1 .accent::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      background: var(--color-accent);
+      opacity: 0.4;
+      z-index: -1;
+      border-radius: 4px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--color-text-muted);
+      margin-bottom: 40px;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none;
+      font-family: var(--font-body);
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: white;
+      box-shadow: var(--shadow-blue);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(26, 86, 219, 0.4);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--color-dark);
+      border: 1px solid var(--color-border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-arrow {
+      transition: transform var(--transition);
+    }
+
+    .btn:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .stat-item .stat-number {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-item .stat-label {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+
+    .hero-visual {
+      position: relative;
+      animation: slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .hero-image-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #1A56DB, #0E3A99);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: floatCard 4s ease-in-out infinite;
+    }
+
+    .hero-floating-card.card-1 {
+      top: 30px;
+      left: -40px;
+    }
+
+    .hero-floating-card.card-2 {
+      bottom: 60px;
+      right: -30px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .floating-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .floating-icon.yellow {
+      background: rgba(255, 214, 10, 0.2);
+    }
+
+    .floating-icon.blue {
+      background: rgba(26, 86, 219, 0.12);
+    }
+
+    .floating-text .label {
+      font-size: 11px;
+      color: var(--color-text-muted);
+    }
+
+    .floating-text .value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-dark);
+    }
+
+    /* ============ SECTION DEFAULTS ============ */
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 64px;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-primary);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    .section-eyebrow::before,
+    .section-eyebrow::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 16px;
+      height: 1px;
+      background: var(--color-primary);
+    }
+
+    .section-eyebrow::before { left: 0; }
+    .section-eyebrow::after { right: 0; }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--color-dark);
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .section-title .accent {
+      color: var(--color-primary);
+      font-style: italic;
+    }
+
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    /* ============ DESTINATIONS ============ */
+    .destinations {
+      background: var(--color-bg-soft);
+    }
+
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: 16px;
+    }
+
+    .destination-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .destination-card:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+    .destination-card:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .destination-card:nth-child(3) { grid-column: 3; grid-row: 1; }
+    .destination-card:nth-child(4) { grid-column: 2 / 4; grid-row: 2; }
+
+    .destination-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .destination-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .destination-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10, 22, 40, 0) 40%, rgba(10, 22, 40, 0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      color: white;
+    }
+
+    .destination-card .name {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .destination-card:nth-child(1) .name {
+      font-size: 36px;
+    }
+
+    .destination-card .info {
+      font-size: 13px;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .destination-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--color-accent);
+      color: var(--color-dark);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    /* ============ SERVICES ============ */
+    .services {
+      background: white;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-md);
+      background: var(--color-primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: var(--color-primary);
+      transition: all var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--color-primary);
+      color: white;
+      transform: rotate(-5deg);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--color-dark);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--color-text-muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .service-link {
+      color: var(--color-primary);
+      font-weight: 500;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--transition);
+    }
+
+    .service-card:hover .service-link {
+      gap: 10px;
+    }
+
+    /* ============ ABOUT ============ */
+    .about {
+      background: linear-gradient(180deg, white 0%, #FFFAEB 100%);
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-image-wrap {
+      position: relative;
+    }
+
+    .about-image-main {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-image-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-image-accent {
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 240px;
+      aspect-ratio: 1;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 8px solid white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-image-accent img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-decoration {
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      width: 120px;
+      height: 120px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    .about-content h2 {
+      margin-bottom: 24px;
+    }
+
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .about-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .feature-check {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .feature-content h4 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-dark);
+      margin-bottom: 4px;
+    }
+
+    .feature-content p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+
+    /* ============ TESTIMONIALS ============ */
+    .testimonials {
+      background: var(--color-dark);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonials::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 214, 10, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .testimonials::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(26, 86, 219, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .testimonials .section-title {
+      color: white;
+    }
+
+    .testimonials .section-subtitle {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      backdrop-filter: blur(10px);
+      transition: all var(--transition);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 214, 10, 0.4);
+    }
+
+    .testimonial-stars {
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: white;
+    }
+
+    .author-info .name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .author-info .role {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ============ CTA ============ */
+    .cta {
+      padding: 60px 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      border-radius: var(--radius-xl);
+      padding: 80px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 214, 10, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cta-box::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .cta p {
+      font-size: 17px;
+      max-width: 580px;
+      margin: 0 auto 32px;
+      opacity: 0.9;
+    }
+
+    .cta .btn-primary {
+      background: var(--color-accent);
+      color: var(--color-dark);
+      box-shadow: 0 12px 32px rgba(255, 214, 10, 0.4);
+    }
+
+    .cta .btn-primary:hover {
+      background: var(--color-accent-dark);
+      box-shadow: 0 20px 50px rgba(255, 214, 10, 0.5);
+    }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      background: var(--color-dark);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 80px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand .nav-logo {
+      margin-bottom: 20px;
+    }
+
+    .footer-brand .nav-logo-text .brand {
+      color: white;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+      color: white;
+    }
+
+    .footer-social a:hover {
+      background: var(--color-primary);
+      transform: translateY(-3px);
+    }
+
+    .footer-col h4 {
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col a {
+      font-size: 14px;
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .footer-contact-item svg {
+      flex-shrink: 0;
+      color: var(--color-accent);
+      margin-top: 2px;
+    }
+
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 968px) {
+      .nav-menu {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hero {
+        padding: 100px 0 60px;
+      }
+
+      .hero-stats {
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .stat-item .stat-number {
+        font-size: 28px;
+      }
+
+      .destinations-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 240px 240px 240px;
+      }
+
+      .destination-card:nth-child(1) { grid-column: 1 / 3; grid-row: 1; }
+      .destination-card:nth-child(2) { grid-column: 1; grid-row: 2; }
+      .destination-card:nth-child(3) { grid-column: 2; grid-row: 2; }
+      .destination-card:nth-child(4) { grid-column: 1 / 3; grid-row: 3; }
+
+      .services-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / 3;
+      }
+
+      .cta-box {
+        padding: 48px 24px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1;
+      }
+
+      .hero-floating-card {
+        display: none;
+      }
+
+      .about-image-accent {
+        width: 160px;
+        bottom: -20px;
+        right: -20px;
+      }
+    }
+
+    /* ============ SCROLL REVEAL ============ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo-icon.jpg" alt="Viet Culture Logo" />
+        <div class="nav-logo-text">
+          <span class="brand">Viet Culture</span>
+          <span class="tagline">Travel your way</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#home">Trang chủ</a></li>
+        <li><a href="#destinations">Điểm đến</a></li>
+        <li><a href="#services">Dịch vụ</a></li>
+        <li><a href="#about">Về chúng tôi</a></li>
+        <li><a href="#testimonials">Đánh giá</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta">Đặt tour ngay</a>
+
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-decoration">
+      <div class="hero-sun"></div>
+      <div class="hero-circle"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">Chào mừng đến với Viet Culture</div>
+          <h1>
+            Khám phá Việt Nam<br/>
+            theo <span class="accent">cách của bạn</span>
+          </h1>
+          <p class="hero-subtitle">
+            Hành trình du lịch độc đáo, dịch vụ chuyên nghiệp và những trải nghiệm văn hóa đậm chất Việt — tất cả được thiết kế riêng cho bạn.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#destinations" class="btn btn-primary">
+              Khám phá tour
+              <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#about" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Xem giới thiệu
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Khách hàng hài lòng</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Điểm đến hấp dẫn</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Năm kinh nghiệm</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-card">
+            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80" alt="Hạ Long Bay Vietnam" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1A56DB 0%, #FFD60A 100%)';" />
+          </div>
+
+          <div class="hero-floating-card card-1">
+            <div class="floating-icon yellow">☀️</div>
+            <div class="floating-text">
+              <div class="label">Điểm đến hot</div>
+              <div class="value">Hạ Long Bay</div>
+            </div>
+          </div>
+
+          <div class="hero-floating-card card-2">
+            <div class="floating-icon blue">✈️</div>
+            <div class="floating-text">
+              <div class="label">Tour mới</div>
+              <div class="value">Sapa 3N2Đ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESTINATIONS ============ -->
+  <section class="destinations" id="destinations">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Điểm đến nổi bật</span>
+        <h2 class="section-title">Những hành trình <span class="accent">đáng nhớ</span></h2>
+        <p class="section-subtitle">Từ vịnh biển kỳ vĩ đến núi rừng hùng vĩ, khám phá những điểm đến tuyệt đẹp nhất Việt Nam.</p>
+      </div>
+
+      <div class="destinations-grid reveal">
+        <a href="#" class="destination-card">
+          <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=900&q=80" alt="Hạ Long" onerror="this.src='https://placehold.co/800x600/1A56DB/FFFFFF?text=H%E1%BA%A1+Long'" />
+          <span class="destination-tag">Bestseller</span>
+          <div class="destination-overlay">
+            <div class="name">Vịnh Hạ Long</div>
+            <div class="info">📍 Quảng Ninh • 3 ngày 2 đêm</div>
+          </div>
+        </a>
+
+        <a href="#" class="destination-card">
+          <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80" alt="Sapa" onerror="this.src='https://placehold.co/600x400/FFD60A/0A1628?text=Sapa'" />
+          <div class="destination-overlay">
+            <div class="name">Sapa</div>
+            <div class="info">📍 Lào Cai</div>
+          </div>
+        </a>
+
+        <a href="#" class="destination-card">
+          <img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600&q=80" alt="Hội An" onerror="this.src='https://placehold.co/600x400/0E3A99/FFFFFF?text=H%E1%BB%99i+An'" />
+          <div class="destination-overlay">
+            <div class="name">Hội An</div>
+            <div class="info">📍 Quảng Nam</div>
+          </div>
+        </a>
+
+        <a href="#" class="destination-card">
+          <img src="https://images.unsplash.com/photo-1509233725247-49e657c54213?w=900&q=80" alt="Phú Quốc" onerror="this.src='https://placehold.co/900x400/1A56DB/FFD60A?text=Ph%C3%BA+Qu%E1%BB%91c'" />
+          <div class="destination-overlay">
+            <div class="name">Phú Quốc</div>
+            <div class="info">📍 Kiên Giang • Tour biển đảo cao cấp</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Dịch vụ của chúng tôi</span>
+        <h2 class="section-title">Giải pháp du lịch <span class="accent">trọn gói</span></h2>
+        <p class="section-subtitle">Chúng tôi mang đến những trải nghiệm du lịch đa dạng, được thiết kế theo nhu cầu cá nhân.</p>
+      </div>
+
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Tour trong nước</h3>
+          <p>Khám phá vẻ đẹp ba miền Việt Nam với các tour được thiết kế tỉ mỉ, hướng dẫn viên chuyên nghiệp và lịch trình linh hoạt.</p>
+          <a href="#" class="service-link">Tìm hiểu thêm →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Tour quốc tế</h3>
+          <p>Hành trình vượt biên giới đến những vùng đất mới. Visa, vé máy bay, khách sạn — chúng tôi lo trọn gói cho bạn.</p>
+          <a href="#" class="service-link">Tìm hiểu thêm →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>Tour thiết kế riêng</h3>
+          <p>Hành trình được tùy chỉnh theo sở thích, ngân sách và lịch trình của riêng bạn. Du lịch theo cách của bạn — đúng nghĩa.</p>
+          <a href="#" class="service-link">Tìm hiểu thêm →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Đặt vé & visa</h3>
+          <p>Dịch vụ đặt vé máy bay, tàu hỏa, xin visa các nước — nhanh chóng, đáng tin cậy với mức giá tốt nhất.</p>
+          <a href="#" class="service-link">Tìm hiểu thêm →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+          </div>
+          <h3>Đặt khách sạn</h3>
+          <p>Hệ thống đối tác khách sạn trên toàn quốc và quốc tế, từ resort 5 sao đến homestay đậm chất bản địa.</p>
+          <a href="#" class="service-link">Tìm hiểu thêm →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Tour MICE & Doanh nghiệp</h3>
+          <p>Tour team building, hội nghị, sự kiện cho doanh nghiệp — chuyên nghiệp, sáng tạo, gắn kết đội ngũ.</p>
+          <a href="#" class="service-link">Tìm hiểu thêm →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap reveal">
+          <div class="about-decoration"></div>
+          <div class="about-image-main">
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="Du lịch Việt Nam" onerror="this.src='https://placehold.co/800x1000/1A56DB/FFD60A?text=Viet+Culture'" />
+          </div>
+          <div class="about-image-accent">
+            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=400&q=80" alt="" onerror="this.src='https://placehold.co/400x400/FFD60A/0A1628?text=%E2%98%80%EF%B8%8F'" />
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <span class="section-eyebrow" style="text-align: left; padding-left: 24px;">Về Viet Culture</span>
+          <h2 class="section-title">Hành trình của bạn,<br/><span class="accent">câu chuyện của chúng tôi</span></h2>
+          <p class="section-subtitle">
+            Công ty TNHH Du lịch và Dịch vụ Viet Culture được thành lập với sứ mệnh mang đến những trải nghiệm du lịch chân thực, chất lượng và đậm chất văn hóa Việt Nam cho du khách trong và ngoài nước.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="feature-check">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="feature-content">
+                <h4>Hướng dẫn viên chuyên nghiệp</h4>
+                <p>Đội ngũ HDV giàu kinh nghiệm, am hiểu văn hóa, ngôn ngữ và lịch sử bản địa.</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <div class="feature-check">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="feature-content">
+                <h4>Lịch trình linh hoạt</h4>
+                <p>Tour được thiết kế theo nhu cầu cá nhân, có thể điều chỉnh linh hoạt theo ý bạn.</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <div class="feature-check">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="feature-content">
+                <h4>Cam kết giá tốt nhất</h4>
+                <p>Chính sách giá minh bạch, không phụ phí ẩn. Cam kết hoàn tiền nếu không hài lòng.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow" style="color: var(--color-accent);">Khách hàng nói gì</span>
+        <h2 class="section-title">Những đánh giá <span class="accent" style="color: var(--color-accent);">chân thực</span></h2>
+        <p class="section-subtitle">Hơn 500 khách hàng đã tin tưởng và hài lòng với dịch vụ của Viet Culture.</p>
+      </div>
+
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Chuyến đi Hạ Long với Viet Culture là một trong những trải nghiệm đáng nhớ nhất của gia đình tôi. HDV nhiệt tình, lịch trình hợp lý, ăn uống ngon."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">NM</div>
+            <div class="author-info">
+              <div class="name">Nguyễn Minh</div>
+              <div class="role">Hà Nội</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Tour Sapa 3 ngày 2 đêm thật sự rất tuyệt. Mọi thứ đều được chuẩn bị chu đáo. Sẽ đặt tour với Viet Culture cho lần đi tiếp theo!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">TH</div>
+            <div class="author-info">
+              <div class="name">Trần Hương</div>
+              <div class="role">TP. Hồ Chí Minh</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Tour thiết kế riêng cho công ty rất chuyên nghiệp. Team building gắn kết, mọi nhân viên đều rất hài lòng. Cảm ơn Viet Culture!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">LP</div>
+            <div class="author-info">
+              <div class="name">Lê Phương</div>
+              <div class="role">Giám đốc nhân sự</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <div class="cta-box reveal">
+        <div class="cta-content">
+          <h2>Sẵn sàng cho hành trình<br/>của riêng bạn?</h2>
+          <p>Liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí và nhận ưu đãi đặc biệt cho khách hàng mới.</p>
+          <a href="tel:+84123456789" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Gọi tư vấn ngay
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <img src="assets/logo-icon.jpg" alt="Viet Culture" />
+            <div class="nav-logo-text">
+              <span class="brand">Viet Culture</span>
+              <span class="tagline">Travel your way</span>
+            </div>
+          </a>
+          <p>Công ty TNHH Du lịch và Dịch vụ Viet Culture — Mang đến những trải nghiệm du lịch chân thực và đáng nhớ nhất.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.61a8.28 8.28 0 0 0 4.84 1.55v-3.4a4.83 4.83 0 0 1-1.91-.07z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Khám phá</h4>
+          <ul>
+            <li><a href="#destinations">Điểm đến</a></li>
+            <li><a href="#services">Dịch vụ</a></li>
+            <li><a href="#about">Về chúng tôi</a></li>
+            <li><a href="#testimonials">Đánh giá</a></li>
+            <li><a href="#">Tin tức</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hỗ trợ</h4>
+          <ul>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+            <li><a href="#">Chính sách hủy tour</a></li>
+            <li><a href="#">Điều khoản dịch vụ</a></li>
+            <li><a href="#">Bảo mật thông tin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Liên hệ</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Hà Nội, Việt Nam</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+84 123 456 789</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@vietculture.vn</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Công ty TNHH Du lịch và Dịch vụ Viet Culture. All rights reserved.</div>
+        <div>Designed with ❤️ in Vietnam</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile menu toggle (basic - có thể mở rộng sau)
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        navMenu.style.position = 'absolute';
+        navMenu.style.top = '100%';
+        navMenu.style.left = '0';
+        navMenu.style.right = '0';
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.background = 'white';
+        navMenu.style.padding = '24px';
+        navMenu.style.gap = '20px';
+        navMenu.style.boxShadow = '0 8px 24px rgba(0,0,0,0.08)';
+      });
+    }
+  </script>
+
+</body>
+</html>
