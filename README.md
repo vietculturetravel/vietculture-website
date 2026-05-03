@@ -35,7 +35,7 @@ vietculture/
 Mở file `index.html` bằng trình soạn thảo (Notepad, VS Code, Sublime...). Tìm và sửa các phần sau:
 
 ### 1. Thông tin liên hệ
-Tìm `+84 123 456 789` và `info@vietculture.vn` → thay bằng số/email thật của bạn.
+Tìm `+84 964000344` và `vietculture24@gmail.com` → thay bằng số/email thật của bạn.
 
 ### 2. Số liệu thống kê (Hero)
 Tìm `500+`, `50+`, `10+` → đổi theo số thật của công ty.
@@ -54,38 +54,3 @@ Tìm phần `<!-- ============ TESTIMONIALS ============ -->`.
 ### 6. Đổi link mạng xã hội
 Trong phần Footer, tìm `<a href="#" aria-label="Facebook">` → thay `#` bằng URL thật.
 
-## 🌐 Đăng lên internet (deploy)
-
-Có nhiều cách đăng website lên mạng miễn phí:
-
-**Cách dễ nhất — Netlify (miễn phí):**
-1. Vào https://netlify.com → Đăng ký
-2. Kéo thả thư mục `vietculture` vào trang Netlify
-3. Xong! Bạn sẽ có một URL dạng `vietculture-xxxx.netlify.app`
-
-**Cách 2 — Vercel:** Tương tự Netlify, vào https://vercel.com
-
-**Cách 3 — Mua tên miền `vietculture.vn`:** Đăng ký tại các nhà cung cấp như Mắt Bão, PA Vietnam, GoDaddy... rồi trỏ về Netlify/Vercel.
-
-## 🔧 Tính năng đã có
-
-- ✅ Responsive (chạy tốt trên điện thoại, tablet, máy tính)
-- ✅ Animation mượt mà khi scroll
-- ✅ Menu sticky (cố định khi cuộn)
-- ✅ Hover effects đẹp mắt
-- ✅ Mobile menu (cơ bản)
-- ✅ SEO meta tags cơ bản
-
-## 💡 Có thể bổ sung sau
-
-- Form liên hệ (cần backend hoặc dịch vụ như Formspree/Netlify Forms)
-- Trang chi tiết từng tour
-- Trang blog/tin tức
-- Tích hợp Google Maps
-- Tích hợp chat Messenger/Zalo
-- Đa ngôn ngữ (Việt/Anh)
-- Hệ thống đặt tour online
-
----
-
-Mọi thắc mắc hoặc muốn nâng cấp thêm tính năng, cứ liên hệ Claude nhé! 🚀
