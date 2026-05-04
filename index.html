@@ -3,1450 +3,2497 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Viet Culture - Travel Your Way | Du lịch khám phá Việt Nam</title>
-  <meta name="description" content="Công ty TNHH Du lịch và Dịch vụ Viet Culture - Khám phá Việt Nam theo cách của bạn. Dịch vụ tour du lịch trong nước và quốc tế chuyên nghiệp." />
-  <link rel="icon" type="image/jpeg" href="assets/logo-icon.jpg" />
+  <title>Viet Culture Travel — Travel your way | Du lịch văn hóa chuyên sâu</title>
+  <meta name="description" content="Viet Culture Travel - Đơn vị tiên phong trong du lịch văn hóa chuyên sâu. Khám phá Việt Nam, Trung Quốc, Nhật Bản với hành trình chạm sâu vào đời sống bản địa." />
 
-  <!-- Google Fonts: Playfair Display (sang trọng) + Be Vietnam Pro (hiện đại, hỗ trợ tiếng Việt tốt) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Fonts: dùng preconnect để tăng tốc, font-display:swap đã được áp dụng -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    /* =========================================================
-       VIET CULTURE - DESIGN SYSTEM
-       Tone màu chính: vàng mặt trời + xanh dương biển cả
-       Phong cách: sang trọng, hiện đại, trẻ trung
-       ========================================================= */
     :root {
-      --color-primary: #1A56DB;       /* Xanh dương từ logo */
-      --color-primary-dark: #0E3A99;
-      --color-primary-light: #E8F0FE;
-      --color-accent: #FFD60A;        /* Vàng mặt trời từ logo */
-      --color-accent-dark: #E5B800;
-      --color-dark: #0A1628;          /* Xanh navy đậm cho text */
-      --color-text: #1F2937;
-      --color-text-muted: #6B7280;
-      --color-bg: #FFFFFF;
-      --color-bg-soft: #FAFBFC;
-      --color-bg-cream: #FFFAEB;      /* Vàng nhạt cho background */
-      --color-border: #E5E7EB;
+      /* Bảng màu lấy từ logo Viet Culture: xanh dương biển + vàng mặt trời */
+      --primary: #1A5FBF;          /* Xanh dương biển - màu chính của logo */
+      --primary-dark: #134A99;
+      --primary-light: #4282E0;
+      --primary-bg: #E8F1FB;       /* Xanh nhạt - nền */
+      --gold: #FFD93D;             /* Vàng mặt trời - màu phụ của logo */
+      --gold-dark: #E5BC1F;
+      --gold-light: #FFE675;
+      --jade: #0E7C7B;             /* Xanh ngọc - accent */
+      --cream: #FAFBFD;            /* Trắng kem hơi xanh */
+      --cream-dark: #EEF3F9;
+      --ink: #0F1F3D;              /* Xanh navy đậm thay cho đen */
+      --ink-soft: #2C3E5C;
+      --rice: #FFFFFF;
+      --gray: #5A6A82;
+      --border: #D9E3F0;
 
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+      --shadow-sm: 0 2px 8px rgba(15, 31, 61, 0.06);
+      --shadow-md: 0 8px 24px rgba(15, 31, 61, 0.1);
+      --shadow-lg: 0 20px 50px rgba(15, 31, 61, 0.15);
+      --shadow-blue: 0 12px 30px rgba(26, 95, 191, 0.25);
 
-      --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.06);
-      --shadow-md: 0 8px 24px rgba(10, 22, 40, 0.08);
-      --shadow-lg: 0 20px 60px rgba(10, 22, 40, 0.12);
-      --shadow-blue: 0 12px 32px rgba(26, 86, 219, 0.25);
+      /* Font stack có fallback hệ thống mạnh để hiển thị tốt ngay cả khi Google Fonts không tải được */
+      --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --font-body: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
 
-      --radius-sm: 8px;
+      --radius-sm: 6px;
       --radius-md: 12px;
       --radius-lg: 20px;
-      --radius-xl: 32px;
-
-      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--font-body);
-      color: var(--color-text);
-      background: var(--color-bg);
-      line-height: 1.7;
+      color: var(--ink);
+      background: var(--cream);
+      font-size: 16px;
+      line-height: 1.65;
       overflow-x: hidden;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
     .container {
-      max-width: 1240px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* ============ NAVIGATION ============ */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.6);
-      transition: all var(--transition);
+    /* ====== TOP BAR ====== */
+    .top-bar {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 10px 0;
+      font-size: 13px;
+      border-bottom: 1px solid var(--gold-dark);
     }
-
-    .nav.scrolled {
-      box-shadow: var(--shadow-sm);
-    }
-
-    .nav-inner {
+    .top-bar-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 16px 0;
-    }
-
-    .nav-logo {
-      display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 12px;
     }
-
-    .nav-logo img {
-      height: 48px;
-      width: auto;
+    .top-bar-left { display: flex; gap: 24px; flex-wrap: wrap; }
+    .top-bar-left a { display: flex; align-items: center; gap: 8px; transition: color .2s; }
+    .top-bar-left a:hover { color: var(--gold-light); }
+    .top-bar-left i { color: var(--gold); }
+    .top-bar-right { display: flex; gap: 16px; align-items: center; }
+    .top-bar-right .social { display: flex; gap: 12px; }
+    .top-bar-right .social a {
+      width: 28px; height: 28px;
+      border: 1px solid rgba(255, 217, 61, 0.4);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      transition: all .25s;
     }
+    .top-bar-right .social a:hover {
+      background: var(--gold);
+      color: var(--ink);
+      transform: translateY(-2px);
+    }
+    .lang-sep { color: rgba(255,255,255,0.3); }
 
-    .nav-logo-text {
+    /* ====== HEADER / NAV ====== */
+    .header {
+      background: var(--rice);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
       display: flex;
-      flex-direction: column;
-      line-height: 1.1;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
     }
-
-    .nav-logo-text .brand {
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform .3s;
+    }
+    .logo:hover { transform: translateY(-1px); }
+    .logo-img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(26, 95, 191, 0.15));
+    }
+    /* Logo trong header có cả ảnh đầy đủ, nên text bên cạnh không cần thiết */
+    .logo-text {
+      display: none; /* Logo đã có chữ "Viet Culture" và slogan tích hợp */
+    }
+    .logo-text h1 {
       font-family: var(--font-display);
-      font-weight: 700;
       font-size: 22px;
-      color: var(--color-primary);
-      letter-spacing: -0.5px;
-    }
-
-    .nav-logo-text .tagline {
-      font-size: 11px;
-      color: var(--color-accent-dark);
-      font-style: italic;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
       letter-spacing: 0.5px;
+    }
+    .logo-text p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--gold-dark);
+      letter-spacing: 1px;
     }
 
     .nav-menu {
       display: flex;
+      gap: 4px;
       align-items: center;
-      gap: 36px;
-      list-style: none;
     }
-
-    .nav-menu a {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--color-text);
+    .nav-item {
       position: relative;
-      transition: color var(--transition);
     }
+    .nav-link {
+      padding: 10px 16px;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+      cursor: pointer;
+    }
+    .nav-link:hover, .nav-item.active .nav-link {
+      color: var(--primary);
+    }
+    .nav-link i { font-size: 11px; transition: transform .2s; }
+    .nav-item:hover .nav-link i { transform: rotate(180deg); }
 
-    .nav-menu a::after {
-      content: '';
+    /* Mega menu */
+    .mega-menu {
       position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--color-accent);
-      transition: width var(--transition);
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: var(--rice);
+      box-shadow: var(--shadow-lg);
+      border-top: 3px solid var(--primary);
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+      padding: 28px;
+      min-width: 720px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
-
-    .nav-menu a:hover {
-      color: var(--color-primary);
+    .nav-item:hover .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
     }
-
-    .nav-menu a:hover::after {
-      width: 100%;
+    .mega-col h4 {
+      font-family: var(--font-display);
+      color: var(--primary);
+      font-size: 16px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mega-col h4 i { color: var(--gold); }
+    .mega-col ul { list-style: none; }
+    .mega-col li a {
+      display: block;
+      padding: 6px 0;
+      font-size: 14px;
+      color: var(--ink-soft);
+      transition: all .2s;
+    }
+    .mega-col li a:hover {
+      color: var(--primary);
+      padding-left: 6px;
     }
 
     .nav-cta {
-      background: var(--color-primary);
-      color: white;
-      padding: 12px 24px;
+      background: var(--primary);
+      color: var(--cream);
+      padding: 12px 22px;
       border-radius: 999px;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 14px;
-      transition: all var(--transition);
-      box-shadow: var(--shadow-blue);
-    }
-
-    .nav-cta:hover {
-      background: var(--color-primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 16px 40px rgba(26, 86, 219, 0.35);
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--color-dark);
-      margin: 5px 0;
-      transition: all var(--transition);
-    }
-
-    /* ============ HERO ============ */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 0 80px;
-      overflow: hidden;
-      background: linear-gradient(135deg, #FFFAEB 0%, #FFFFFF 50%, #E8F0FE 100%);
-    }
-
-    .hero-bg-decoration {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .hero-sun {
-      position: absolute;
-      top: -120px;
-      right: -120px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(255, 214, 10, 0.4) 0%, rgba(255, 214, 10, 0) 70%);
-      border-radius: 50%;
-      animation: float 8s ease-in-out infinite;
-    }
-
-    .hero-circle {
-      position: absolute;
-      bottom: -200px;
-      left: -200px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(26, 86, 219, 0.08) 0%, rgba(26, 86, 219, 0) 70%);
-      border-radius: 50%;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-30px) rotate(5deg); }
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 80px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-content {
-      animation: slideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-40px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255, 214, 10, 0.15);
-      border: 1px solid rgba(255, 214, 10, 0.4);
-      color: var(--color-accent-dark);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
-
-    .hero-badge::before {
-      content: '✦';
-      color: var(--color-accent);
-    }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(40px, 5.5vw, 68px);
-      font-weight: 700;
-      line-height: 1.05;
-      color: var(--color-dark);
-      letter-spacing: -1.5px;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 .accent {
-      color: var(--color-primary);
-      font-style: italic;
-      position: relative;
-      display: inline-block;
-    }
-
-    .hero h1 .accent::after {
-      content: '';
-      position: absolute;
-      bottom: 4px;
-      left: 0;
-      width: 100%;
-      height: 12px;
-      background: var(--color-accent);
-      opacity: 0.4;
-      z-index: -1;
-      border-radius: 4px;
-    }
-
-    .hero-subtitle {
-      font-size: 18px;
-      color: var(--color-text-muted);
-      margin-bottom: 40px;
-      max-width: 520px;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 56px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 32px;
-      border-radius: 999px;
-      font-weight: 500;
-      font-size: 15px;
-      cursor: pointer;
-      transition: all var(--transition);
-      border: none;
-      font-family: var(--font-body);
-    }
-
-    .btn-primary {
-      background: var(--color-primary);
-      color: white;
+      transition: all .25s;
       box-shadow: var(--shadow-blue);
     }
-
-    .btn-primary:hover {
-      background: var(--color-primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 20px 50px rgba(26, 86, 219, 0.4);
+    .nav-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
     }
 
-    .btn-secondary {
-      background: white;
-      color: var(--color-dark);
-      border: 1px solid var(--color-border);
+    .mobile-toggle {
+      display: none;
+      font-size: 24px;
+      color: var(--primary);
     }
 
-    .btn-secondary:hover {
-      border-color: var(--color-primary);
-      color: var(--color-primary);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .btn-arrow {
-      transition: transform var(--transition);
-    }
-
-    .btn:hover .btn-arrow {
-      transform: translateX(4px);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 48px;
-      padding-top: 32px;
-      border-top: 1px solid var(--color-border);
-    }
-
-    .stat-item .stat-number {
-      font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .stat-item .stat-label {
-      font-size: 13px;
-      color: var(--color-text-muted);
-    }
-
-    .hero-visual {
+    /* ====== HERO ====== */
+    .hero {
       position: relative;
-      animation: slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(40px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    .hero-image-card {
-      position: relative;
-      border-radius: var(--radius-xl);
+      min-height: 720px;
+      background:
+        linear-gradient(rgba(15, 31, 61, 0.55), rgba(15, 31, 61, 0.4)),
+        url('https://images.unsplash.com/photo-1528127269322-539801943592?w=1920&q=80') center/cover;
+      color: var(--cream);
       overflow: hidden;
-      aspect-ratio: 4/5;
-      background: linear-gradient(135deg, #1A56DB, #0E3A99);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .hero-image-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-floating-card {
-      position: absolute;
-      background: white;
-      border-radius: var(--radius-md);
-      padding: 16px 20px;
-      box-shadow: var(--shadow-lg);
       display: flex;
       align-items: center;
-      gap: 12px;
-      animation: floatCard 4s ease-in-out infinite;
+      padding: 80px 0 120px;
     }
-
-    .hero-floating-card.card-1 {
-      top: 30px;
-      left: -40px;
-    }
-
-    .hero-floating-card.card-2 {
-      bottom: 60px;
-      right: -30px;
-      animation-delay: 1.5s;
-    }
-
-    @keyframes floatCard {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
-
-    .floating-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-    }
-
-    .floating-icon.yellow {
-      background: rgba(255, 214, 10, 0.2);
-    }
-
-    .floating-icon.blue {
-      background: rgba(26, 86, 219, 0.12);
-    }
-
-    .floating-text .label {
-      font-size: 11px;
-      color: var(--color-text-muted);
-    }
-
-    .floating-text .value {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--color-dark);
-    }
-
-    /* ============ SECTION DEFAULTS ============ */
-    section {
-      padding: 100px 0;
-      position: relative;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 64px;
-    }
-
-    .section-eyebrow {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--color-primary);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      position: relative;
-      padding: 0 24px;
-    }
-
-    .section-eyebrow::before,
-    .section-eyebrow::after {
+    .hero::before {
       content: '';
       position: absolute;
-      top: 50%;
-      width: 16px;
-      height: 1px;
-      background: var(--color-primary);
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(26, 95, 191, 0.2), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 217, 61, 0.15), transparent 50%);
+      pointer-events: none;
+    }
+    .hero-pattern {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      width: 200px;
+      height: 200px;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    .hero-content {
+      max-width: 760px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: '';
+      width: 40px; height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-weight: 400;
+    }
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--gold);
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .hero-desc {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+      color: rgba(250, 246, 240, 0.9);
     }
 
-    .section-eyebrow::before { left: 0; }
-    .section-eyebrow::after { right: 0; }
+    /* Search box */
+    .hero-search {
+      background: var(--rice);
+      border-radius: var(--radius-md);
+      padding: 8px;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.2fr auto;
+      gap: 4px;
+      max-width: 920px;
+      align-items: stretch;
+    }
+    .search-field {
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-right: 1px solid var(--border);
+    }
+    .search-field:nth-last-child(2) { border-right: none; }
+    .search-field label {
+      font-size: 11px;
+      color: var(--gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .search-field label i { color: var(--primary); }
+    .search-field input, .search-field select {
+      border: none;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      background: transparent;
+      outline: none;
+      width: 100%;
+      padding: 2px 0;
+    }
+    .search-btn {
+      background: var(--primary);
+      color: var(--cream);
+      padding: 0 32px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all .25s;
+    }
+    .search-btn:hover {
+      background: var(--primary-dark);
+      transform: scale(1.02);
+    }
 
+    /* Hero stats */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+      max-width: 920px;
+    }
+    .stat-item {
+      text-align: left;
+      padding-left: 20px;
+      border-left: 2px solid var(--gold);
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: rgba(250, 246, 240, 0.85);
+      letter-spacing: 0.5px;
+    }
+
+    /* ====== SECTIONS ====== */
+    section { padding: 100px 0; position: relative; }
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 56px;
+    }
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 15px;
+      color: var(--primary);
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .section-eyebrow::before, .section-eyebrow::after {
+      content: '';
+      width: 30px; height: 1px;
+      background: var(--gold);
+    }
     .section-title {
       font-family: var(--font-display);
       font-size: clamp(32px, 4vw, 48px);
       font-weight: 700;
-      color: var(--color-dark);
+      color: var(--ink);
       line-height: 1.15;
-      letter-spacing: -1px;
       margin-bottom: 16px;
+      letter-spacing: -0.5px;
     }
-
-    .section-title .accent {
-      color: var(--color-primary);
+    .section-title em {
       font-style: italic;
+      color: var(--primary);
+      font-weight: 400;
     }
-
-    .section-subtitle {
+    .section-sub {
       font-size: 17px;
-      color: var(--color-text-muted);
+      color: var(--gray);
       line-height: 1.7;
     }
 
-    /* ============ DESTINATIONS ============ */
-    .destinations {
-      background: var(--color-bg-soft);
-    }
-
-    .destinations-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-rows: 280px 280px;
-      gap: 16px;
-    }
-
-    .destination-card {
+    /* ====== HOT TOURS ====== */
+    .hot-tours {
+      background: var(--cream);
       position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      cursor: pointer;
-      transition: all var(--transition);
     }
-
-    .destination-card:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
-    .destination-card:nth-child(2) { grid-column: 2; grid-row: 1; }
-    .destination-card:nth-child(3) { grid-column: 3; grid-row: 1; }
-    .destination-card:nth-child(4) { grid-column: 2 / 4; grid-row: 2; }
-
-    .destination-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .destination-card:hover img {
-      transform: scale(1.08);
-    }
-
-    .destination-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(10, 22, 40, 0) 40%, rgba(10, 22, 40, 0.85) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 24px;
-      color: white;
-    }
-
-    .destination-card .name {
-      font-family: var(--font-display);
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .destination-card:nth-child(1) .name {
-      font-size: 36px;
-    }
-
-    .destination-card .info {
-      font-size: 13px;
-      opacity: 0.9;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .destination-tag {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--color-accent);
-      color: var(--color-dark);
-      font-size: 11px;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 999px;
-    }
-
-    /* ============ SERVICES ============ */
-    .services {
-      background: white;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .service-card {
-      background: white;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: 40px 32px;
-      transition: all var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
+    .hot-tours::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform var(--transition);
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
-
-    .service-card:hover {
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .tour-card {
+      background: var(--rice);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all .35s cubic-bezier(.4,0,.2,1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+    }
+    .tour-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-lg);
-      border-color: transparent;
+      border-color: var(--gold);
+    }
+    .tour-img {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+    .tour-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+    .tour-card:hover .tour-img img { transform: scale(1.08); }
+
+    .tour-badges {
+      position: absolute;
+      top: 14px; left: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .badge {
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .badge-hot { background: var(--primary); color: var(--cream); }
+    .badge-sale { background: var(--gold); color: var(--ink); }
+    .badge-new { background: var(--jade); color: var(--cream); }
+
+    .tour-fav {
+      position: absolute;
+      top: 14px; right: 14px;
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      color: var(--primary);
+      transition: all .25s;
+      backdrop-filter: blur(4px);
+    }
+    .tour-fav:hover {
+      background: var(--primary);
+      color: var(--cream);
+      transform: scale(1.1);
     }
 
-    .service-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .service-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: var(--radius-md);
-      background: var(--color-primary-light);
+    .tour-region {
+      position: absolute;
+      bottom: 14px; left: 14px;
+      background: rgba(15, 31, 61, 0.75);
+      backdrop-filter: blur(6px);
+      color: var(--cream);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      color: var(--color-primary);
-      transition: all var(--transition);
+      gap: 6px;
     }
+    .tour-region i { color: var(--gold-light); }
 
-    .service-card:hover .service-icon {
-      background: var(--color-primary);
-      color: white;
-      transform: rotate(-5deg);
-    }
+    .tour-body { padding: 22px 22px 24px; flex: 1; display: flex; flex-direction: column; }
 
-    .service-card h3 {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--color-dark);
+    .tour-meta {
+      display: flex;
+      gap: 16px;
       margin-bottom: 12px;
+      font-size: 13px;
+      color: var(--gray);
+    }
+    .tour-meta span { display: flex; align-items: center; gap: 5px; }
+    .tour-meta i { color: var(--primary); }
+
+    .tour-title {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--ink);
+      margin-bottom: 12px;
+      min-height: 52px;
+      transition: color .2s;
+    }
+    .tour-card:hover .tour-title { color: var(--primary); }
+
+    .tour-highlights {
+      list-style: none;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .tour-highlights li {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      padding: 4px 0 4px 22px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .tour-highlights li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dark);
+      font-weight: 700;
     }
 
-    .service-card p {
-      color: var(--color-text-muted);
-      font-size: 15px;
-      margin-bottom: 20px;
+    .tour-footer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-top: 18px;
+      border-top: 1px dashed var(--border);
     }
-
-    .service-link {
-      color: var(--color-primary);
-      font-weight: 500;
-      font-size: 14px;
-      display: inline-flex;
+    .tour-price-wrap {}
+    .tour-price-old {
+      font-size: 13px;
+      color: var(--gray);
+      text-decoration: line-through;
+    }
+    .tour-price {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .tour-price small {
+      font-size: 12px;
+      color: var(--gray);
+      font-weight: 400;
+      margin-left: 2px;
+    }
+    .tour-btn {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      transition: all .25s;
+      display: flex;
       align-items: center;
       gap: 6px;
-      transition: gap var(--transition);
     }
-
-    .service-card:hover .service-link {
+    .tour-btn:hover {
+      background: var(--primary);
       gap: 10px;
     }
 
-    /* ============ ABOUT ============ */
-    .about {
-      background: linear-gradient(180deg, white 0%, #FFFAEB 100%);
-      position: relative;
+    .view-all {
+      text-align: center;
+      margin-top: 48px;
     }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+    .btn-outline {
+      display: inline-flex;
       align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      border-radius: 999px;
+      font-weight: 600;
+      transition: all .25s;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: var(--cream);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-blue);
     }
 
-    .about-image-wrap {
-      position: relative;
+    /* ====== TOUR THEO VÙNG MIỀN (TABS) ====== */
+    .tours-region {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
     }
-
-    .about-image-main {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .about-image-main img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .about-image-accent {
-      position: absolute;
-      bottom: -40px;
-      right: -40px;
-      width: 240px;
-      aspect-ratio: 1;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 8px solid white;
-      box-shadow: var(--shadow-md);
-    }
-
-    .about-image-accent img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .about-decoration {
-      position: absolute;
-      top: -30px;
-      left: -30px;
-      width: 120px;
-      height: 120px;
-      background: var(--color-accent);
-      border-radius: 50%;
-      opacity: 0.3;
-      z-index: -1;
-    }
-
-    .about-content h2 {
-      margin-bottom: 24px;
-    }
-
-    .about-features {
+    .region-tabs {
       display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-top: 32px;
-    }
-
-    .about-feature {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .feature-check {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--color-primary-light);
-      display: flex;
-      align-items: center;
       justify-content: center;
-      color: var(--color-primary);
-      flex-shrink: 0;
+      gap: 8px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
     }
-
-    .feature-content h4 {
+    .region-tab {
+      padding: 12px 28px;
+      font-family: var(--font-display);
       font-size: 17px;
       font-weight: 600;
-      color: var(--color-dark);
-      margin-bottom: 4px;
+      color: var(--ink-soft);
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      background: var(--rice);
+      transition: all .25s;
+      cursor: pointer;
+    }
+    .region-tab.active {
+      background: var(--primary);
+      color: var(--cream);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-blue);
+    }
+    .region-tab:hover:not(.active) {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .region-content { display: none; }
+    .region-content.active { display: block; animation: fadeUp .5s ease; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .feature-content p {
-      font-size: 14px;
-      color: var(--color-text-muted);
+    /* ====== TOURS QUỐC TẾ ====== */
+    .tours-international {
+      background: var(--rice);
     }
-
-    /* ============ TESTIMONIALS ============ */
-    .testimonials {
-      background: var(--color-dark);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .testimonials::before {
-      content: '';
-      position: absolute;
-      top: -150px;
-      right: -150px;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(255, 214, 10, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .testimonials::after {
-      content: '';
-      position: absolute;
-      bottom: -200px;
-      left: -200px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(26, 86, 219, 0.2) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .testimonials .section-title {
-      color: white;
-    }
-
-    .testimonials .section-subtitle {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .testimonials-grid {
+    .intl-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+    }
+    .intl-card {
       position: relative;
-      z-index: 1;
-    }
-
-    .testimonial-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      aspect-ratio: 3/4;
       border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+    }
+    .intl-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .8s;
+    }
+    .intl-card:hover img { transform: scale(1.1); }
+    .intl-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(28,22,18,0.85) 100%);
+    }
+    .intl-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
       padding: 32px;
-      backdrop-filter: blur(10px);
-      transition: all var(--transition);
+      color: var(--cream);
+      z-index: 2;
     }
-
-    .testimonial-card:hover {
-      transform: translateY(-6px);
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 214, 10, 0.4);
+    .intl-flag {
+      font-size: 36px;
+      margin-bottom: 12px;
+      display: block;
     }
-
-    .testimonial-stars {
-      color: var(--color-accent);
-      margin-bottom: 16px;
-      font-size: 16px;
-      letter-spacing: 2px;
+    .intl-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 6px;
     }
-
-    .testimonial-text {
-      font-size: 15px;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 24px;
+    .intl-tours-count {
+      font-family: var(--font-serif);
       font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 16px;
     }
-
-    .testimonial-author {
-      display: flex;
+    .intl-link {
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-    }
-
-    .author-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
       font-weight: 600;
-      color: white;
+      transition: gap .25s;
     }
+    .intl-card:hover .intl-link { gap: 14px; color: var(--gold-light); }
 
-    .author-info .name {
-      font-weight: 600;
-      font-size: 15px;
+    /* ====== DỊCH VỤ LẺ ====== */
+    .services {
+      background: var(--cream);
     }
-
-    .author-info .role {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.6);
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
     }
-
-    /* ============ CTA ============ */
-    .cta {
-      padding: 60px 0;
-    }
-
-    .cta-box {
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-      border-radius: var(--radius-xl);
-      padding: 80px 60px;
+    .service-card {
+      background: var(--rice);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
       text-align: center;
+      transition: all .3s;
+      border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
-      color: white;
     }
-
-    .cta-box::before {
+    .service-card::before {
       content: '';
       position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(255, 214, 10, 0.3) 0%, transparent 70%);
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 80px; height: 80px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, rgba(26, 95, 191, 0.08), rgba(255, 217, 61, 0.08));
       border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 32px;
+      color: var(--primary);
+      transition: all .3s;
     }
-
-    .cta-box::after {
-      content: '';
-      position: absolute;
-      bottom: -100px;
-      left: -100px;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-      border-radius: 50%;
+    .service-card:hover .service-icon {
+      background: var(--primary);
+      color: var(--cream);
+      transform: rotateY(180deg);
     }
-
-    .cta-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta h2 {
+    .service-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 48px);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .service-desc {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ====== TẠI SAO CHỌN ====== */
+    .why-us {
+      background: var(--ink);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .why-us::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26, 95, 191, 0.2), transparent 70%);
+    }
+    .why-us::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 217, 61, 0.15), transparent 70%);
+    }
+    .why-us .section-title { color: var(--cream); }
+    .why-us .section-eyebrow { color: var(--gold-light); }
+    .why-us .section-sub { color: rgba(250, 246, 240, 0.75); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .why-features {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .why-feature {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 217, 61, 0.2);
+      transition: all .3s;
+    }
+    .why-feature:hover {
+      background: rgba(255, 217, 61, 0.08);
+      transform: translateX(8px);
+      border-color: var(--gold);
+    }
+    .why-icon {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--primary), var(--gold-dark));
+      border-radius: var(--radius-sm);
+      display: grid; place-items: center;
+      font-size: 24px;
+      color: var(--cream);
+    }
+    .why-text h4 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--gold-light);
+    }
+    .why-text p {
+      font-size: 14.5px;
+      color: rgba(250, 246, 240, 0.85);
+      line-height: 1.65;
+    }
+
+    .why-image {
+      position: relative;
+    }
+    .why-image img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    .why-image::before {
+      content: '';
+      position: absolute;
+      top: -20px; left: -20px;
+      right: 40px; bottom: 40px;
+      border: 2px solid var(--gold);
+      border-radius: var(--radius-lg);
+      z-index: -1;
+    }
+    .why-stats-card {
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      background: var(--primary);
+      color: var(--cream);
+      padding: 28px 32px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-blue);
+      text-align: center;
+    }
+    .why-stats-card .num {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--gold-light);
+    }
+    .why-stats-card .label {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* ====== TESTIMONIALS ====== */
+    .testimonials {
+      background: var(--cream);
+    }
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .test-card {
+      background: var(--rice);
+      padding: 36px 30px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      border: 1px solid var(--border);
+      transition: all .3s;
+    }
+    .test-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .test-card .quote-mark {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-family: var(--font-display);
+      font-size: 80px;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+    }
+    .test-stars {
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+    .test-text {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+    }
+    .test-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .test-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--gold-dark));
+      display: grid; place-items: center;
+      color: var(--cream);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .test-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--ink);
+    }
+    .test-role {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    /* ====== PARTNERS ====== */
+    .partners {
+      background: var(--rice);
+      padding: 80px 0;
+    }
+    .partners-head {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .partners-head h3 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .partners-head p {
+      color: var(--gray);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+    .partners-logos {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+      align-items: center;
+    }
+    .partner-logo {
+      height: 90px;
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      display: grid; place-items: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--ink-soft);
+      transition: all .3s;
+      border: 1px solid var(--border);
+      padding: 16px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+    .partner-logo:hover {
+      background: var(--primary);
+      color: var(--cream);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-blue);
+    }
+
+    /* ====== BLOG ====== */
+    .blog {
+      background: var(--cream);
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .blog-card {
+      background: var(--rice);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all .3s;
+      border: 1px solid var(--border);
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .blog-img {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      position: relative;
+    }
+    .blog-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+    .blog-card:hover .blog-img img { transform: scale(1.05); }
+    .blog-category {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: var(--primary);
+      color: var(--cream);
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+    }
+    .blog-body { padding: 24px; }
+    .blog-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 12px;
+    }
+    .blog-meta span { display: flex; align-items: center; gap: 5px; }
+    .blog-meta i { color: var(--primary); }
+    .blog-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--ink);
+      margin-bottom: 12px;
+      transition: color .2s;
+    }
+    .blog-card:hover .blog-title { color: var(--primary); }
+    .blog-excerpt {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .blog-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+      transition: gap .25s;
+    }
+    .blog-card:hover .blog-link { gap: 10px; }
+
+    /* ====== CTA SECTION ====== */
+    .cta-section {
+      padding: 80px 0;
+      background:
+        linear-gradient(rgba(15, 31, 61, 0.85), rgba(26, 95, 191, 0.7)),
+        url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1920&q=80') center/cover fixed;
+      color: var(--cream);
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4.5vw, 52px);
       font-weight: 700;
       margin-bottom: 16px;
       line-height: 1.15;
     }
-
-    .cta p {
-      font-size: 17px;
-      max-width: 580px;
-      margin: 0 auto 32px;
-      opacity: 0.9;
+    .cta-section h2 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .cta-section p {
+      font-size: 18px;
+      max-width: 640px;
+      margin: 0 auto 36px;
+      color: rgba(250, 246, 240, 0.92);
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--cream);
+      padding: 16px 36px;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all .3s;
+      box-shadow: var(--shadow-blue);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--cream);
+      padding: 16px 36px;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all .3s;
+      border: 2px solid var(--gold);
+    }
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: var(--ink);
     }
 
-    .cta .btn-primary {
-      background: var(--color-accent);
-      color: var(--color-dark);
-      box-shadow: 0 12px 32px rgba(255, 214, 10, 0.4);
+    /* ====== QUICK CONTACT FORM ====== */
+    .quick-contact {
+      background: linear-gradient(135deg, var(--cream-dark), var(--cream));
+      padding: 80px 0;
     }
-
-    .cta .btn-primary:hover {
-      background: var(--color-accent-dark);
-      box-shadow: 0 20px 50px rgba(255, 214, 10, 0.5);
-    }
-
-    /* ============ FOOTER ============ */
-    .footer {
-      background: var(--color-dark);
-      color: rgba(255, 255, 255, 0.7);
-      padding: 80px 0 32px;
-    }
-
-    .footer-grid {
+    .qc-wrap {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
     }
-
-    .footer-brand .nav-logo {
-      margin-bottom: 20px;
+    .qc-info h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 16px;
     }
-
-    .footer-brand .nav-logo-text .brand {
-      color: white;
-    }
-
-    .footer-brand p {
-      font-size: 14px;
+    .qc-info h2 em { font-style: italic; color: var(--primary); }
+    .qc-info > p {
+      font-size: 16px;
+      color: var(--gray);
       line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .qc-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .qc-features li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .qc-features i {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      background: var(--primary);
+      color: var(--cream);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 13px;
+    }
+    .qc-features b {
+      font-family: var(--font-display);
+      color: var(--ink);
+      font-size: 16px;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .qc-features span {
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    .qc-form {
+      background: var(--rice);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+    }
+    .qc-form h3 {
+      font-family: var(--font-display);
+      font-size: 26px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .qc-form > p {
+      font-size: 14px;
+      color: var(--gray);
       margin-bottom: 24px;
     }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--ink);
+      background: var(--cream);
+      transition: all .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      background: var(--rice);
+    }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .qc-form .btn-primary {
+      width: 100%;
+      justify-content: center;
+      padding: 16px;
+      margin-top: 6px;
+      box-shadow: var(--shadow-blue);
+    }
+
+    /* ====== FOOTER ====== */
+    .footer {
+      background: var(--ink);
+      color: rgba(250, 246, 240, 0.8);
+      padding: 80px 0 0;
+      position: relative;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--gold), var(--primary));
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      padding-bottom: 60px;
+    }
+    .footer .logo-text h1 { color: var(--cream); }
+    .footer .logo-img {
+      height: 80px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      filter: none;
+    }
+    .footer-about p {
+      margin: 20px 0;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+    }
+    .footer-contact a {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      transition: color .2s;
+    }
+    .footer-contact a:hover { color: var(--gold-light); }
+    .footer-contact i {
+      color: var(--gold);
+      width: 16px;
+      margin-top: 4px;
+    }
+    .footer h4 {
+      font-family: var(--font-display);
+      color: var(--cream);
+      font-size: 18px;
+      margin-bottom: 22px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .footer h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 36px; height: 2px;
+      background: var(--gold);
+    }
+    .footer ul { list-style: none; }
+    .footer ul li {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .footer ul li a {
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer ul li a:hover {
+      color: var(--gold-light);
+      padding-left: 4px;
+    }
+    .footer ul li a::before {
+      content: '›';
+      color: var(--gold);
+    }
+    .newsletter-form {
+      display: flex;
+      margin-top: 16px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 999px;
+      padding: 4px;
+      border: 1px solid rgba(255, 217, 61, 0.3);
+    }
+    .newsletter-form input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 12px 18px;
+      color: var(--cream);
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+    }
+    .newsletter-form input::placeholder { color: rgba(250, 246, 240, 0.5); }
+    .newsletter-form button {
+      background: var(--primary);
+      color: var(--cream);
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    .newsletter-form button:hover { background: var(--primary-dark); }
 
     .footer-social {
       display: flex;
-      gap: 12px;
+      gap: 10px;
+      margin-top: 20px;
     }
-
     .footer-social a {
-      width: 40px;
-      height: 40px;
+      width: 40px; height: 40px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all var(--transition);
-      color: white;
+      background: rgba(255,255,255,0.06);
+      display: grid; place-items: center;
+      transition: all .25s;
+      border: 1px solid rgba(255, 217, 61, 0.2);
     }
-
     .footer-social a:hover {
-      background: var(--color-primary);
+      background: var(--primary);
       transform: translateY(-3px);
-    }
-
-    .footer-col h4 {
-      color: white;
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col li {
-      margin-bottom: 12px;
-    }
-
-    .footer-col a {
-      font-size: 14px;
-      transition: color var(--transition);
-    }
-
-    .footer-col a:hover {
-      color: var(--color-accent);
-    }
-
-    .footer-contact-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      margin-bottom: 16px;
-      font-size: 14px;
-    }
-
-    .footer-contact-item svg {
-      flex-shrink: 0;
-      color: var(--color-accent);
-      margin-top: 2px;
+      border-color: var(--primary);
     }
 
     .footer-bottom {
-      padding-top: 32px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 13px;
       flex-wrap: wrap;
       gap: 16px;
+      font-size: 13px;
+    }
+    .footer-bottom .legal {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom .legal a:hover { color: var(--gold-light); }
+
+    /* ====== FLOATING BUTTONS ====== */
+    .floating-buttons {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 99;
+    }
+    .float-btn {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      color: var(--cream);
+      font-size: 22px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: all .3s;
+      position: relative;
+    }
+    .float-btn::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    .float-btn.zalo { background: #0068FF; }
+    .float-btn.zalo::after { border: 2px solid rgba(0, 104, 255, 0.5); }
+    .float-btn.messenger { background: linear-gradient(135deg, #00C6FF, #0078FF); }
+    .float-btn.phone { background: var(--primary); }
+    .float-btn.phone::after { border: 2px solid rgba(26, 95, 191, 0.5); }
+    .float-btn:hover { transform: scale(1.1); }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.4); opacity: 0; }
     }
 
-    /* ============ RESPONSIVE ============ */
-    @media (max-width: 968px) {
-      .nav-menu {
-        display: none;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-
-      .nav-cta {
-        display: none;
-      }
-
-      .hero-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .hero {
-        padding: 100px 0 60px;
-      }
-
-      .hero-stats {
-        gap: 24px;
-        flex-wrap: wrap;
-      }
-
-      .stat-item .stat-number {
-        font-size: 28px;
-      }
-
-      .destinations-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 240px 240px 240px;
-      }
-
-      .destination-card:nth-child(1) { grid-column: 1 / 3; grid-row: 1; }
-      .destination-card:nth-child(2) { grid-column: 1; grid-row: 2; }
-      .destination-card:nth-child(3) { grid-column: 2; grid-row: 2; }
-      .destination-card:nth-child(4) { grid-column: 1 / 3; grid-row: 3; }
-
-      .services-grid,
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 32px;
-      }
-
-      .footer-brand {
-        grid-column: 1 / 3;
-      }
-
-      .cta-box {
-        padding: 48px 24px;
-      }
-
-      section {
-        padding: 64px 0;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-brand {
-        grid-column: 1;
-      }
-
-      .hero-floating-card {
-        display: none;
-      }
-
-      .about-image-accent {
-        width: 160px;
-        bottom: -20px;
-        right: -20px;
-      }
-    }
-
-    /* ============ SCROLL REVEAL ============ */
-    .reveal {
+    .scroll-top {
+      width: 48px; height: 48px;
+      background: var(--ink);
+      color: var(--cream);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      box-shadow: var(--shadow-md);
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(20px);
+      transition: all .3s;
+      pointer-events: none;
     }
-
-    .reveal.visible {
+    .scroll-top.show {
       opacity: 1;
       transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 1024px) {
+      .tour-grid, .test-grid, .blog-grid, .intl-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .partners-logos { grid-template-columns: repeat(3, 1fr); }
+      .why-grid, .qc-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-search { grid-template-columns: 1fr 1fr; }
+      .search-field { border-right: none; border-bottom: 1px solid var(--border); }
+      .search-btn { grid-column: span 2; padding: 16px; }
+      .nav-menu { display: none; }
+      .mobile-toggle { display: block; }
+    }
+    @media (max-width: 640px) {
+      section { padding: 60px 0; }
+      .hero { min-height: 600px; padding: 60px 0; }
+      .hero h1 { font-size: 36px; }
+      .tour-grid, .test-grid, .blog-grid, .intl-grid, .services-grid { grid-template-columns: 1fr; }
+      .partners-logos { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .top-bar-left { font-size: 12px; gap: 14px; }
+      .top-bar-right .lang-switch, .top-bar-right .lang-sep { display: none; }
+      .qc-form { padding: 28px 22px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ============ NAVIGATION ============ -->
-  <nav class="nav" id="nav">
-    <div class="container nav-inner">
-      <a href="#" class="nav-logo">
-        <img src="assets/logo-icon.jpg" alt="Viet Culture Logo" />
-        <div class="nav-logo-text">
-          <span class="brand">Viet Culture</span>
-          <span class="tagline">Travel your way</span>
+  <!-- ============================ TOP BAR ============================ -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <a href="tel:+84964000344"><i class="fas fa-phone-volume"></i> Hotline 24/7: (+84) 964 000 344</a>
+        <a href="mailto:vietculture24@gmail.com"><i class="fas fa-envelope"></i> vietculture24@gmail.com</a>
+        <span><i class="fas fa-clock" style="color:var(--gold)"></i> Luôn mở cửa</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="lang-switch">VN | EN</span>
+        <span class="lang-sep">|</span>
+        <div class="social">
+          <a href="https://www.facebook.com/vietculture24/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://tiktok.com/vietculture24/" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Viet Culture Travel - Trang chủ">
+        <img src="logo.png" alt="Viet Culture Travel - Travel your way" class="logo-img" />
+        <div class="logo-text">
+          <h1>Viet Culture</h1>
+          <p>Travel your way</p>
         </div>
       </a>
 
-      <ul class="nav-menu">
-        <li><a href="#home">Trang chủ</a></li>
-        <li><a href="#destinations">Điểm đến</a></li>
-        <li><a href="#services">Dịch vụ</a></li>
-        <li><a href="#about">Về chúng tôi</a></li>
-        <li><a href="#testimonials">Đánh giá</a></li>
-        <li><a href="#contact">Liên hệ</a></li>
-      </ul>
-
-      <a href="#contact" class="nav-cta">Đặt tour ngay</a>
-
-      <button class="nav-toggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="home">
-    <div class="hero-bg-decoration">
-      <div class="hero-sun"></div>
-      <div class="hero-circle"></div>
-    </div>
-
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge">Chào mừng đến với Viet Culture</div>
-          <h1>
-            Khám phá Việt Nam<br/>
-            theo <span class="accent">cách của bạn</span>
-          </h1>
-          <p class="hero-subtitle">
-            Hành trình du lịch độc đáo, dịch vụ chuyên nghiệp và những trải nghiệm văn hóa đậm chất Việt — tất cả được thiết kế riêng cho bạn.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#destinations" class="btn btn-primary">
-              Khám phá tour
-              <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <a href="#about" class="btn btn-secondary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Xem giới thiệu
-            </a>
-          </div>
-
-          <div class="hero-stats">
-            <div class="stat-item">
-              <div class="stat-number">500+</div>
-              <div class="stat-label">Khách hàng hài lòng</div>
+      <nav class="nav-menu">
+        <div class="nav-item active">
+          <a class="nav-link" href="/">Trang chủ</a>
+        </div>
+        <div class="nav-item">
+          <span class="nav-link">Tour trong nước <i class="fas fa-chevron-down"></i></span>
+          <div class="mega-menu">
+            <div class="mega-col">
+              <h4><i class="fas fa-mountain"></i> Miền Bắc</h4>
+              <ul>
+                <li><a href="#">Hà Nội — Hạ Long — Ninh Bình</a></li>
+                <li><a href="#">Sapa — Fansipan — Bản Cát Cát</a></li>
+                <li><a href="#">Hà Giang — Đồng Văn — Lũng Cú</a></li>
+                <li><a href="#">Cao Bằng — Thác Bản Giốc</a></li>
+                <li><a href="#">Mộc Châu — Mai Châu</a></li>
+                <li><a href="#">Yên Tử — Tâm linh Đông Bắc</a></li>
+              </ul>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">50+</div>
-              <div class="stat-label">Điểm đến hấp dẫn</div>
+            <div class="mega-col">
+              <h4><i class="fas fa-umbrella-beach"></i> Miền Trung</h4>
+              <ul>
+                <li><a href="#">Đà Nẵng — Hội An — Bà Nà Hills</a></li>
+                <li><a href="#">Huế — Cố đô di sản</a></li>
+                <li><a href="#">Quảng Bình — Phong Nha</a></li>
+                <li><a href="#">Nha Trang — Vinpearl</a></li>
+                <li><a href="#">Đà Lạt — Thành phố ngàn hoa</a></li>
+                <li><a href="#">Quy Nhơn — Phú Yên</a></li>
+              </ul>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">10+</div>
-              <div class="stat-label">Năm kinh nghiệm</div>
+            <div class="mega-col">
+              <h4><i class="fas fa-water"></i> Miền Nam</h4>
+              <ul>
+                <li><a href="#">TP. HCM — Sài Gòn cuối tuần</a></li>
+                <li><a href="#">Phú Quốc — Đảo ngọc</a></li>
+                <li><a href="#">Côn Đảo — Tâm linh & nghỉ dưỡng</a></li>
+                <li><a href="#">Miền Tây sông nước</a></li>
+                <li><a href="#">Vũng Tàu cuối tuần</a></li>
+                <li><a href="#">Cần Thơ — Châu Đốc</a></li>
+              </ul>
             </div>
           </div>
         </div>
-
-        <div class="hero-visual">
-          <div class="hero-image-card">
-            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80" alt="Hạ Long Bay Vietnam" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1A56DB 0%, #FFD60A 100%)';" />
-          </div>
-
-          <div class="hero-floating-card card-1">
-            <div class="floating-icon yellow">☀️</div>
-            <div class="floating-text">
-              <div class="label">Điểm đến hot</div>
-              <div class="value">Hạ Long Bay</div>
+        <div class="nav-item">
+          <span class="nav-link">Tour quốc tế <i class="fas fa-chevron-down"></i></span>
+          <div class="mega-menu" style="grid-template-columns: repeat(2, 1fr); min-width: 480px;">
+            <div class="mega-col">
+              <h4><i class="fas fa-torii-gate"></i> Đông Á</h4>
+              <ul>
+                <li><a href="#">Trung Quốc — Đại Lý — Lệ Giang</a></li>
+                <li><a href="#">Trung Quốc — Cửu Trại Câu</a></li>
+                <li><a href="#">Nhật Bản — Tokyo — Kyoto</a></li>
+                <li><a href="#">Nhật Bản — Hokkaido</a></li>
+                <li><a href="#">Hàn Quốc — Seoul — Busan</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4><i class="fas fa-globe-asia"></i> Đông Nam Á & xa hơn</h4>
+              <ul>
+                <li><a href="#">Thái Lan — Bangkok — Pattaya</a></li>
+                <li><a href="#">Singapore — Malaysia</a></li>
+                <li><a href="#">Bali — Indonesia</a></li>
+                <li><a href="#">Châu Âu — Pháp — Ý — Thụy Sĩ</a></li>
+                <li><a href="#">Mỹ — Úc — Canada</a></li>
+              </ul>
             </div>
           </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="#services">Dịch vụ lẻ</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="#blog">Cẩm nang</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="#about">Về chúng tôi</a>
+        </div>
+      </nav>
 
-          <div class="hero-floating-card card-2">
-            <div class="floating-icon blue">✈️</div>
-            <div class="floating-text">
-              <div class="label">Tour mới</div>
-              <div class="value">Sapa 3N2Đ</div>
-            </div>
+      <a href="#contact" class="nav-cta">
+        <i class="fas fa-headset"></i> Tư vấn ngay
+      </a>
+      <button class="mobile-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <svg class="hero-pattern" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="48" fill="none" stroke="#FFD93D" stroke-width="0.5"/>
+      <circle cx="50" cy="50" r="38" fill="none" stroke="#FFD93D" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <path d="M50 10 L55 45 L90 50 L55 55 L50 90 L45 55 L10 50 L45 45 Z" fill="#FFD93D" opacity="0.6"/>
+    </svg>
+
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Khám phá Việt Nam · Trung Quốc · Nhật Bản</div>
+        <h1>Hành trình <em>chạm sâu</em><br>vào đời sống bản địa</h1>
+        <div class="hero-tagline">— Travel your way —</div>
+        <p class="hero-desc">
+          Viet Culture Travel kiến tạo những chuyến đi không chỉ là sự dịch chuyển về địa lý,
+          mà còn là hành trình kết nối tâm hồn và tôn vinh những giá trị di sản, bản sắc
+          đậm đà của dải đất hình chữ S.
+        </p>
+
+        <!-- Search Form -->
+        <form class="hero-search" onsubmit="event.preventDefault(); alert('Tìm tour theo tiêu chí của bạn!');">
+          <div class="search-field">
+            <label><i class="fas fa-map-marker-alt"></i> Điểm đến</label>
+            <input type="text" placeholder="Bạn muốn đi đâu?" />
+          </div>
+          <div class="search-field">
+            <label><i class="far fa-calendar-alt"></i> Ngày khởi hành</label>
+            <input type="date" />
+          </div>
+          <div class="search-field">
+            <label><i class="fas fa-user-friends"></i> Số người</label>
+            <select>
+              <option>1 người</option>
+              <option>2 người</option>
+              <option>3 - 4 người</option>
+              <option>5 - 10 người</option>
+              <option>Nhóm lớn</option>
+            </select>
+          </div>
+          <button class="search-btn" type="submit">
+            <i class="fas fa-search"></i> Tìm tour
+          </button>
+        </form>
+
+        <!-- Hero Stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">1000+</div>
+            <div class="stat-label">Khách hàng hài lòng</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">50+</div>
+            <div class="stat-label">Điểm đến hấp dẫn</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Năm kinh nghiệm HDV</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">34</div>
+            <div class="stat-label">Tỉnh thành & 3 nước</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ DESTINATIONS ============ -->
-  <section class="destinations" id="destinations">
+  <!-- ============================ HOT TOURS ============================ -->
+  <section class="hot-tours" id="hot-tours">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Điểm đến nổi bật</span>
-        <h2 class="section-title">Những hành trình <span class="accent">đáng nhớ</span></h2>
-        <p class="section-subtitle">Từ vịnh biển kỳ vĩ đến núi rừng hùng vĩ, khám phá những điểm đến tuyệt đẹp nhất Việt Nam.</p>
+      <div class="section-head">
+        <div class="section-eyebrow">Tour HOT đang khuyến mãi</div>
+        <h2 class="section-title">Hành trình <em>nổi bật</em> mùa này</h2>
+        <p class="section-sub">
+          Những tour được khách hàng yêu thích nhất, kèm ưu đãi giới hạn cuối năm.
+          Đặt sớm để nhận giá tốt và quà tặng độc quyền từ Viet Culture.
+        </p>
       </div>
 
-      <div class="destinations-grid reveal">
-        <a href="#" class="destination-card">
-          <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=900&q=80" alt="Hạ Long" onerror="this.src='https://placehold.co/800x600/1A56DB/FFFFFF?text=H%E1%BA%A1+Long'" />
-          <span class="destination-tag">Bestseller</span>
-          <div class="destination-overlay">
-            <div class="name">Vịnh Hạ Long</div>
-            <div class="info">📍 Quảng Ninh • 3 ngày 2 đêm</div>
+      <div class="tour-grid">
+        <!-- Tour 1 -->
+        <article class="tour-card">
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80" alt="Sapa Fansipan" />
+            <div class="tour-badges">
+              <span class="badge badge-hot">Hot</span>
+              <span class="badge badge-sale">Giảm 700K</span>
+            </div>
+            <button class="tour-fav" aria-label="Yêu thích"><i class="far fa-heart"></i></button>
+            <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Miền Bắc</div>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta">
+              <span><i class="far fa-clock"></i> 6N5Đ</span>
+              <span><i class="fas fa-plane"></i> Máy bay + Ô tô</span>
+              <span><i class="far fa-calendar"></i> Hàng tuần</span>
+            </div>
+            <h3 class="tour-title">Sapa – Fansipan – Hà Nội – Yên Tử – Hạ Long – Ninh Bình – Bái Đính</h3>
+            <ul class="tour-highlights">
+              <li>Chinh phục đỉnh Fansipan, đi tàu hỏa Mường Hoa</li>
+              <li>Du ngoạn Vịnh Hạ Long di sản UNESCO</li>
+              <li>Khám phá Tràng An, chùa Bái Đính lớn nhất ĐNÁ</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price-wrap">
+                <div class="tour-price-old">12.550.000đ</div>
+                <div class="tour-price">11.850.000<small>đ/khách</small></div>
+              </div>
+              <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tour 2 -->
+        <article class="tour-card">
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80" alt="Hà Giang" />
+            <div class="tour-badges">
+              <span class="badge badge-hot">Hot</span>
+              <span class="badge badge-new">Mới</span>
+            </div>
+            <button class="tour-fav" aria-label="Yêu thích"><i class="far fa-heart"></i></button>
+            <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Đông Bắc</div>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta">
+              <span><i class="far fa-clock"></i> 5N4Đ</span>
+              <span><i class="fas fa-bus"></i> Ô tô</span>
+              <span><i class="far fa-calendar"></i> Thứ 6 hàng tuần</span>
+            </div>
+            <h3 class="tour-title">Đông Bắc: Hà Giang – Lũng Cú – Đồng Văn – Cao Bằng – Thác Bản Giốc – Hồ Ba Bể</h3>
+            <ul class="tour-highlights">
+              <li>Chinh phục cực Bắc, cột cờ Lũng Cú thiêng liêng</li>
+              <li>Đi thuyền sông Nho Quế ngắm hẻm Tu Sản</li>
+              <li>Tặng vé đi thuyền hồ Ba Bể nguyên bản</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price-wrap">
+                <div class="tour-price-old">8.990.000đ</div>
+                <div class="tour-price">7.890.000<small>đ/khách</small></div>
+              </div>
+              <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tour 3 -->
+        <article class="tour-card">
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="Sapa O Quy Ho" />
+            <div class="tour-badges">
+              <span class="badge badge-sale">Giảm 500K</span>
+            </div>
+            <button class="tour-fav" aria-label="Yêu thích"><i class="far fa-heart"></i></button>
+            <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Tây Bắc</div>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta">
+              <span><i class="far fa-clock"></i> 3N2Đ</span>
+              <span><i class="fas fa-bus"></i> Ô tô</span>
+              <span><i class="far fa-calendar"></i> Hàng ngày</span>
+            </div>
+            <h3 class="tour-title">Sapa – Đèo Ô Quy Hồ – Bản Cát Cát – Đền Ông Hoàng Bảy – Fansipan</h3>
+            <ul class="tour-highlights">
+              <li>Chinh phục đỉnh Fansipan bằng cáp treo 3 dây</li>
+              <li>Tham quan bản Cát Cát của người H'Mông</li>
+              <li>Lễ tâm linh đền Ông Hoàng Bảy thiêng liêng</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price-wrap">
+                <div class="tour-price-old">4.490.000đ</div>
+                <div class="tour-price">3.990.000<small>đ/khách</small></div>
+              </div>
+              <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tour 4 -->
+        <article class="tour-card">
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="Tràng An" />
+            <div class="tour-badges">
+              <span class="badge badge-hot">Hot</span>
+            </div>
+            <button class="tour-fav" aria-label="Yêu thích"><i class="far fa-heart"></i></button>
+            <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Bắc Bộ</div>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta">
+              <span><i class="far fa-clock"></i> 4N3Đ</span>
+              <span><i class="fas fa-plane"></i> Máy bay</span>
+              <span><i class="far fa-calendar"></i> Hàng ngày</span>
+            </div>
+            <h3 class="tour-title">Hà Nội – Hoàng Thành Thăng Long – Bái Đính – Tràng An – Tuyệt Tình Cốc – Hạ Long</h3>
+            <ul class="tour-highlights">
+              <li>Tham quan di sản Hoàng Thành Thăng Long</li>
+              <li>Chèo thuyền Tràng An – di sản kép thế giới</li>
+              <li>Khám phá Tuyệt Tình Cốc đẹp như cổ tích</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price-wrap">
+                <div class="tour-price-old">7.290.000đ</div>
+                <div class="tour-price">6.590.000<small>đ/khách</small></div>
+              </div>
+              <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tour 5 -->
+        <article class="tour-card">
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80" alt="Nhật Bản Phú Sĩ" />
+            <div class="tour-badges">
+              <span class="badge badge-hot">Hot</span>
+              <span class="badge badge-sale">Giảm 2 triệu</span>
+            </div>
+            <button class="tour-fav" aria-label="Yêu thích"><i class="far fa-heart"></i></button>
+            <div class="tour-region"><i class="fas fa-flag"></i> Nhật Bản</div>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta">
+              <span><i class="far fa-clock"></i> 6N5Đ</span>
+              <span><i class="fas fa-plane"></i> Máy bay</span>
+              <span><i class="far fa-calendar"></i> Hàng tháng</span>
+            </div>
+            <h3 class="tour-title">Nhật Bản: Nagoya – Kyoto – Shirakawago – Takayama – Núi Phú Sĩ – Tokyo</h3>
+            <ul class="tour-highlights">
+              <li>Thưởng thức thịt bò Hida thượng hạng</li>
+              <li>Tham quan làng cổ Shirakawago di sản UNESCO</li>
+              <li>Chinh phục núi Phú Sĩ biểu tượng nước Nhật</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price-wrap">
+                <div class="tour-price-old">39.990.000đ</div>
+                <div class="tour-price">37.990.000<small>đ/khách</small></div>
+              </div>
+              <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tour 6 -->
+        <article class="tour-card">
+          <div class="tour-img">
+            <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80" alt="Trung Quốc Lệ Giang" />
+            <div class="tour-badges">
+              <span class="badge badge-new">Mới</span>
+              <span class="badge badge-sale">Giảm 1 triệu</span>
+            </div>
+            <button class="tour-fav" aria-label="Yêu thích"><i class="far fa-heart"></i></button>
+            <div class="tour-region"><i class="fas fa-flag"></i> Trung Quốc</div>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta">
+              <span><i class="far fa-clock"></i> 6N5Đ</span>
+              <span><i class="fas fa-plane"></i> Máy bay</span>
+              <span><i class="far fa-calendar"></i> Hàng tuần</span>
+            </div>
+            <h3 class="tour-title">Trung Quốc: Đại Lý – Lệ Giang – Shangrila – Côn Minh (Tặng show Ấn tượng Lệ Giang)</h3>
+            <ul class="tour-highlights">
+              <li>Phố cổ Lệ Giang di sản UNESCO huyền thoại</li>
+              <li>Núi tuyết Ngọc Long hùng vĩ Shangrila</li>
+              <li>Tặng show "Ấn tượng Lệ Giang" của Trương Nghệ Mưu</li>
+            </ul>
+            <div class="tour-footer">
+              <div class="tour-price-wrap">
+                <div class="tour-price-old">15.990.000đ</div>
+                <div class="tour-price">14.990.000<small>đ/khách</small></div>
+              </div>
+              <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="view-all">
+        <a href="#" class="btn-outline">
+          Xem tất cả tour HOT <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ TOURS THEO VÙNG MIỀN ============================ -->
+  <section class="tours-region" id="region">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Khám phá ba miền</div>
+        <h2 class="section-title">Tour theo <em>vùng miền</em> Việt Nam</h2>
+        <p class="section-sub">
+          Mỗi vùng đất là một câu chuyện văn hóa sống động. Hãy chọn miền bạn yêu thích
+          để khởi đầu hành trình kết nối với bản sắc Việt.
+        </p>
+      </div>
+
+      <div class="region-tabs">
+        <button class="region-tab active" data-region="north">🏔️ Miền Bắc</button>
+        <button class="region-tab" data-region="central">🏯 Miền Trung</button>
+        <button class="region-tab" data-region="south">🌾 Miền Nam</button>
+      </div>
+
+      <!-- Bắc -->
+      <div class="region-content active" id="region-north">
+        <div class="tour-grid">
+          <article class="tour-card">
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80" alt="" />
+              <div class="tour-badges"><span class="badge badge-hot">Hot</span></div>
+              <button class="tour-fav"><i class="far fa-heart"></i></button>
+              <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Sapa</div>
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span><i class="far fa-clock"></i> 3N2Đ</span>
+                <span><i class="fas fa-bus"></i> Ô tô</span>
+              </div>
+              <h3 class="tour-title">Sapa – Bản Cát Cát – Fansipan</h3>
+              <ul class="tour-highlights">
+                <li>Cáp treo 3 dây dài nhất thế giới</li>
+                <li>Chợ phiên vùng cao đặc sắc</li>
+                <li>Thưởng thức ẩm thực vùng cao</li>
+              </ul>
+              <div class="tour-footer">
+                <div class="tour-price-wrap">
+                  <div class="tour-price">3.990.000<small>đ/khách</small></div>
+                </div>
+                <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="tour-card">
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80" alt="" />
+              <div class="tour-badges"><span class="badge badge-new">Mới</span></div>
+              <button class="tour-fav"><i class="far fa-heart"></i></button>
+              <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Hà Giang</div>
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span><i class="far fa-clock"></i> 4N3Đ</span>
+                <span><i class="fas fa-bus"></i> Ô tô</span>
+              </div>
+              <h3 class="tour-title">Hà Giang – Lũng Cú – Đồng Văn – Sông Nho Quế</h3>
+              <ul class="tour-highlights">
+                <li>Cột cờ Lũng Cú – cực Bắc Tổ quốc</li>
+                <li>Cao nguyên đá Đồng Văn UNESCO</li>
+                <li>Đi thuyền sông Nho Quế hẻm Tu Sản</li>
+              </ul>
+              <div class="tour-footer">
+                <div class="tour-price-wrap">
+                  <div class="tour-price">5.990.000<small>đ/khách</small></div>
+                </div>
+                <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="tour-card">
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="" />
+              <div class="tour-badges"><span class="badge badge-hot">Hot</span></div>
+              <button class="tour-fav"><i class="far fa-heart"></i></button>
+              <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Ninh Bình</div>
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span><i class="far fa-clock"></i> 2N1Đ</span>
+                <span><i class="fas fa-bus"></i> Ô tô</span>
+              </div>
+              <h3 class="tour-title">Ninh Bình – Tràng An – Bái Đính – Tam Cốc</h3>
+              <ul class="tour-highlights">
+                <li>Chèo thuyền Tràng An di sản kép UNESCO</li>
+                <li>Chùa Bái Đính lớn nhất Đông Nam Á</li>
+                <li>Hang Múa view toàn cảnh Tam Cốc</li>
+              </ul>
+              <div class="tour-footer">
+                <div class="tour-price-wrap">
+                  <div class="tour-price">2.490.000<small>đ/khách</small></div>
+                </div>
+                <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Trung -->
+      <div class="region-content" id="region-central">
+        <div class="tour-grid">
+          <article class="tour-card">
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1564594985645-4427056e22e2?w=800&q=80" alt="" />
+              <div class="tour-badges"><span class="badge badge-hot">Hot</span></div>
+              <button class="tour-fav"><i class="far fa-heart"></i></button>
+              <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Đà Nẵng</div>
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span><i class="far fa-clock"></i> 4N3Đ</span>
+                <span><i class="fas fa-plane"></i> Máy bay</span>
+              </div>
+              <h3 class="tour-title">Đà Nẵng – Hội An – Bà Nà Hills – Cầu Vàng</h3>
+              <ul class="tour-highlights">
+                <li>Cầu Vàng biểu tượng mới của du lịch Việt</li>
+                <li>Phố cổ Hội An di sản UNESCO</li>
+                <li>Bãi biển Mỹ Khê đẹp nhất hành tinh</li>
+              </ul>
+              <div class="tour-footer">
+                <div class="tour-price-wrap">
+                  <div class="tour-price">5.990.000<small>đ/khách</small></div>
+                </div>
+                <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="tour-card">
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80" alt="" />
+              <div class="tour-badges"><span class="badge badge-sale">Giảm 500K</span></div>
+              <button class="tour-fav"><i class="far fa-heart"></i></button>
+              <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Huế</div>
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span><i class="far fa-clock"></i> 3N2Đ</span>
+                <span><i class="fas fa-plane"></i> Máy bay</span>
+              </div>
+              <h3 class="tour-title">Huế – Cố đô di sản – Lăng tẩm – Sông Hương</h3>
+              <ul class="tour-highlights">
+                <li>Tham quan Đại Nội – Tử Cấm Thành</li>
+                <li>Du thuyền sông Hương nghe ca Huế</li>
+                <li>Lăng Tự Đức – Khải Định nguyên bản</li>
+              </ul>
+              <div class="tour-footer">
+                <div class="tour-price-wrap">
+                  <div class="tour-price">4.490.000<small>đ/khách</small></div>
+                </div>
+                <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="tour-card">
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1559521783-1d1599583485?w=800&q=80" alt="" />
+              <div class="tour-badges"><span class="badge badge-new">Mới</span></div>
+              <button class="tour-fav"><i class="far fa-heart"></i></button>
+              <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Quảng Bình</div>
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span><i class="far fa-clock"></i> 3N2Đ</span>
+                <span><i class="fas fa-plane"></i> Máy bay</span>
+              </div>
+              <h3 class="tour-title">Quảng Bình – Phong Nha – Sơn Đoòng – Thiên Đường</h3>
+              <ul class="tour-highlights">
+                <li>Khám phá hang động Phong Nha kỳ vĩ</li>
+                <li>Suối Moọc trong xanh giữa rừng nguyên sinh</li>
+                <li>Bãi biển Đá Nhảy hoang sơ</li>
+              </ul>
+              <div class="tour-footer">
+                <div class="tour-price-wrap">
+                  <div class="tour-price">5.490.000<small>đ/khách</small></div>
+                </div>
+                <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Nam -->
+      <div class="region-content" id="region-south">
+        <div class="tour-grid">
+          <article class="tour-card">
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="" />
+              <div class="tour-badges"><span class="badge badge-hot">Hot</span></div>
+              <button class="tour-fav"><i class="far fa-heart"></i></button>
+              <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Phú Quốc</div>
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span><i class="far fa-clock"></i> 4N3Đ</span>
+                <span><i class="fas fa-plane"></i> Máy bay</span>
+              </div>
+              <h3 class="tour-title">Phú Quốc – Đảo ngọc – Vinpearl Safari – Sunset Town</h3>
+              <ul class="tour-highlights">
+                <li>Vinpearl Land & Safari lớn nhất Việt Nam</li>
+                <li>Hoàng hôn Sunset Town tuyệt đẹp</li>
+                <li>Lặn ngắm san hô Hòn Mây Rút</li>
+              </ul>
+              <div class="tour-footer">
+                <div class="tour-price-wrap">
+                  <div class="tour-price">6.990.000<small>đ/khách</small></div>
+                </div>
+                <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="tour-card">
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="" />
+              <div class="tour-badges"><span class="badge badge-sale">Giảm 800K</span></div>
+              <button class="tour-fav"><i class="far fa-heart"></i></button>
+              <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Miền Tây</div>
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span><i class="far fa-clock"></i> 3N2Đ</span>
+                <span><i class="fas fa-bus"></i> Ô tô</span>
+              </div>
+              <h3 class="tour-title">Miền Tây sông nước – Cần Thơ – Châu Đốc – Núi Cấm</h3>
+              <ul class="tour-highlights">
+                <li>Chợ nổi Cái Răng đặc sắc văn hóa</li>
+                <li>Rừng tràm Trà Sư mùa nước nổi</li>
+                <li>Miếu Bà Chúa Xứ thiêng liêng</li>
+              </ul>
+              <div class="tour-footer">
+                <div class="tour-price-wrap">
+                  <div class="tour-price">3.890.000<small>đ/khách</small></div>
+                </div>
+                <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="tour-card">
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80" alt="" />
+              <div class="tour-badges"><span class="badge badge-new">Mới</span></div>
+              <button class="tour-fav"><i class="far fa-heart"></i></button>
+              <div class="tour-region"><i class="fas fa-map-marker-alt"></i> Côn Đảo</div>
+            </div>
+            <div class="tour-body">
+              <div class="tour-meta">
+                <span><i class="far fa-clock"></i> 3N2Đ</span>
+                <span><i class="fas fa-plane"></i> Máy bay</span>
+              </div>
+              <h3 class="tour-title">Côn Đảo – Tâm linh và nghỉ dưỡng – Mộ Cô Sáu</h3>
+              <ul class="tour-highlights">
+                <li>Viếng mộ Cô Võ Thị Sáu thiêng liêng</li>
+                <li>Bãi Đầm Trầu hoang sơ tuyệt đẹp</li>
+                <li>Khu di tích nhà tù lịch sử</li>
+              </ul>
+              <div class="tour-footer">
+                <div class="tour-price-wrap">
+                  <div class="tour-price">7.490.000<small>đ/khách</small></div>
+                </div>
+                <a href="#" class="tour-btn">Chi tiết <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ TOURS QUỐC TẾ ============================ -->
+  <section class="tours-international">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Vươn ra thế giới</div>
+        <h2 class="section-title">Tour <em>quốc tế</em> nổi bật</h2>
+        <p class="section-sub">
+          Trải nghiệm những nền văn hóa độc đáo của các quốc gia hàng đầu Châu Á
+          với hành trình được thiết kế tinh tế và HDV bản địa giàu kinh nghiệm.
+        </p>
+      </div>
+
+      <div class="intl-grid">
+        <a href="#" class="intl-card">
+          <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80" alt="Nhật Bản" />
+          <div class="intl-content">
+            <span class="intl-flag">🇯🇵</span>
+            <h3 class="intl-title">Nhật Bản</h3>
+            <p class="intl-tours-count">15+ tour đặc sắc</p>
+            <span class="intl-link">Khám phá ngay <i class="fas fa-arrow-right"></i></span>
           </div>
         </a>
-
-        <a href="#" class="destination-card">
-          <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80" alt="Sapa" onerror="this.src='https://placehold.co/600x400/FFD60A/0A1628?text=Sapa'" />
-          <div class="destination-overlay">
-            <div class="name">Sapa</div>
-            <div class="info">📍 Lào Cai</div>
+        <a href="#" class="intl-card">
+          <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80" alt="Trung Quốc" />
+          <div class="intl-content">
+            <span class="intl-flag">🇨🇳</span>
+            <h3 class="intl-title">Trung Quốc</h3>
+            <p class="intl-tours-count">20+ tour đặc sắc</p>
+            <span class="intl-link">Khám phá ngay <i class="fas fa-arrow-right"></i></span>
           </div>
         </a>
-
-        <a href="#" class="destination-card">
-          <img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600&q=80" alt="Hội An" onerror="this.src='https://placehold.co/600x400/0E3A99/FFFFFF?text=H%E1%BB%99i+An'" />
-          <div class="destination-overlay">
-            <div class="name">Hội An</div>
-            <div class="info">📍 Quảng Nam</div>
-          </div>
-        </a>
-
-        <a href="#" class="destination-card">
-          <img src="https://images.unsplash.com/photo-1509233725247-49e657c54213?w=900&q=80" alt="Phú Quốc" onerror="this.src='https://placehold.co/900x400/1A56DB/FFD60A?text=Ph%C3%BA+Qu%E1%BB%91c'" />
-          <div class="destination-overlay">
-            <div class="name">Phú Quốc</div>
-            <div class="info">📍 Kiên Giang • Tour biển đảo cao cấp</div>
+        <a href="#" class="intl-card">
+          <img src="https://images.unsplash.com/photo-1538485399081-7c8978d40b6b?w=800&q=80" alt="Hàn Quốc" />
+          <div class="intl-content">
+            <span class="intl-flag">🇰🇷</span>
+            <h3 class="intl-title">Hàn Quốc</h3>
+            <p class="intl-tours-count">8+ tour đặc sắc</p>
+            <span class="intl-link">Khám phá ngay <i class="fas fa-arrow-right"></i></span>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ============ SERVICES ============ -->
+  <!-- ============================ DỊCH VỤ LẺ ============================ -->
   <section class="services" id="services">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Dịch vụ của chúng tôi</span>
-        <h2 class="section-title">Giải pháp du lịch <span class="accent">trọn gói</span></h2>
-        <p class="section-subtitle">Chúng tôi mang đến những trải nghiệm du lịch đa dạng, được thiết kế theo nhu cầu cá nhân.</p>
+      <div class="section-head">
+        <div class="section-eyebrow">Giải pháp toàn diện</div>
+        <h2 class="section-title">Dịch vụ <em>lẻ</em> uy tín</h2>
+        <p class="section-sub">
+          Bên cạnh tour trọn gói, Viet Culture cung cấp các dịch vụ lẻ chất lượng cao
+          giúp bạn chủ động trong mọi hành trình.
+        </p>
       </div>
 
-      <div class="services-grid reveal">
+      <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>Tour trong nước</h3>
-          <p>Khám phá vẻ đẹp ba miền Việt Nam với các tour được thiết kế tỉ mỉ, hướng dẫn viên chuyên nghiệp và lịch trình linh hoạt.</p>
-          <a href="#" class="service-link">Tìm hiểu thêm →</a>
+          <div class="service-icon"><i class="fas fa-passport"></i></div>
+          <h3 class="service-title">Dịch vụ Visa</h3>
+          <p class="service-desc">Hỗ trợ làm visa các nước Trung Quốc, Nhật Bản, Hàn Quốc, Châu Âu, Mỹ — tỷ lệ đậu cao.</p>
         </div>
-
         <div class="service-card">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <h3>Tour quốc tế</h3>
-          <p>Hành trình vượt biên giới đến những vùng đất mới. Visa, vé máy bay, khách sạn — chúng tôi lo trọn gói cho bạn.</p>
-          <a href="#" class="service-link">Tìm hiểu thêm →</a>
+          <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
+          <h3 class="service-title">Vé máy bay</h3>
+          <p class="service-desc">Đặt vé giá tốt mọi hãng nội địa & quốc tế, hỗ trợ 24/7, đổi/hoàn linh hoạt.</p>
         </div>
-
         <div class="service-card">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          </div>
-          <h3>Tour thiết kế riêng</h3>
-          <p>Hành trình được tùy chỉnh theo sở thích, ngân sách và lịch trình của riêng bạn. Du lịch theo cách của bạn — đúng nghĩa.</p>
-          <a href="#" class="service-link">Tìm hiểu thêm →</a>
+          <div class="service-icon"><i class="fas fa-hotel"></i></div>
+          <h3 class="service-title">Khách sạn</h3>
+          <p class="service-desc">Hợp tác với 1000+ khách sạn 3-5 sao trong và ngoài nước, giá ưu đãi cho khách.</p>
         </div>
-
         <div class="service-card">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3>Đặt vé & visa</h3>
-          <p>Dịch vụ đặt vé máy bay, tàu hỏa, xin visa các nước — nhanh chóng, đáng tin cậy với mức giá tốt nhất.</p>
-          <a href="#" class="service-link">Tìm hiểu thêm →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
-          </div>
-          <h3>Đặt khách sạn</h3>
-          <p>Hệ thống đối tác khách sạn trên toàn quốc và quốc tế, từ resort 5 sao đến homestay đậm chất bản địa.</p>
-          <a href="#" class="service-link">Tìm hiểu thêm →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>Tour MICE & Doanh nghiệp</h3>
-          <p>Tour team building, hội nghị, sự kiện cho doanh nghiệp — chuyên nghiệp, sáng tạo, gắn kết đội ngũ.</p>
-          <a href="#" class="service-link">Tìm hiểu thêm →</a>
+          <div class="service-icon"><i class="fas fa-car-side"></i></div>
+          <h3 class="service-title">Thuê xe du lịch</h3>
+          <p class="service-desc">Đội xe 4-45 chỗ đời mới, tài xế kinh nghiệm, sẵn sàng phục vụ mọi lộ trình.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="about" id="about">
+  <!-- ============================ TẠI SAO CHỌN ============================ -->
+  <section class="why-us" id="about">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image-wrap reveal">
-          <div class="about-decoration"></div>
-          <div class="about-image-main">
-            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="Du lịch Việt Nam" onerror="this.src='https://placehold.co/800x1000/1A56DB/FFD60A?text=Viet+Culture'" />
-          </div>
-          <div class="about-image-accent">
-            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=400&q=80" alt="" onerror="this.src='https://placehold.co/400x400/FFD60A/0A1628?text=%E2%98%80%EF%B8%8F'" />
+      <div class="section-head">
+        <div class="section-eyebrow">Vì sao Viet Culture</div>
+        <h2 class="section-title">Bản sắc làm nên <em>khác biệt</em></h2>
+        <p class="section-sub">
+          Chúng tôi không chỉ đưa bạn đến địa điểm — chúng tôi đưa bạn vào câu chuyện văn hóa của nó.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-image">
+          <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80" alt="Viet Culture Experience" />
+          <div class="why-stats-card">
+            <div class="num">100%</div>
+            <div class="label">Khách hài lòng</div>
           </div>
         </div>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-icon"><i class="fas fa-landmark"></i></div>
+            <div class="why-text">
+              <h4>Du lịch văn hóa chuyên sâu</h4>
+              <p>Mỗi điểm đến là một câu chuyện văn hóa sống động — chúng tôi nghiên cứu và hiện thực hóa các giá trị di sản thành lộ trình trải nghiệm thực chứng.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="why-text">
+              <h4>HDV 10+ năm kinh nghiệm</h4>
+              <p>Đội ngũ hướng dẫn viên am hiểu văn hóa vùng miền, mang đến những câu chuyện và góc nhìn mà không sách vở nào có được.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon"><i class="fas fa-leaf"></i></div>
+            <div class="why-text">
+              <h4>Du lịch bền vững (ESG)</h4>
+              <p>Cam kết phát triển hệ sinh thái du lịch bền vững — tôn trọng môi trường, hỗ trợ cộng đồng địa phương, bảo tồn di sản.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon"><i class="fas fa-headset"></i></div>
+            <div class="why-text">
+              <h4>Hỗ trợ 24/7 không ngừng nghỉ</h4>
+              <p>Tổng đài miễn phí 24/7 sẵn sàng phục vụ bạn mọi lúc — từ tư vấn ban đầu đến hỗ trợ trên mọi nẻo đường hành trình.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="about-content reveal">
-          <span class="section-eyebrow" style="text-align: left; padding-left: 24px;">Về Viet Culture</span>
-          <h2 class="section-title">Hành trình của bạn,<br/><span class="accent">câu chuyện của chúng tôi</span></h2>
-          <p class="section-subtitle">
-            Công ty TNHH Du lịch và Dịch vụ Viet Culture được thành lập với sứ mệnh mang đến những trải nghiệm du lịch chân thực, chất lượng và đậm chất văn hóa Việt Nam cho du khách trong và ngoài nước.
+  <!-- ============================ TESTIMONIALS ============================ -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Khách hàng nói gì</div>
+        <h2 class="section-title">Trải nghiệm <em>chân thực</em></h2>
+        <p class="section-sub">
+          Hơn 1000 khách hàng đã đồng hành cùng Viet Culture — đây là những lời chia sẻ
+          chân thành của họ về hành trình.
+        </p>
+      </div>
+
+      <div class="test-grid">
+        <div class="test-card">
+          <span class="quote-mark">"</span>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">
+            Chuyến đi Sapa – Hà Giang cùng Viet Culture là kỷ niệm khó quên nhất năm.
+            HDV không chỉ dẫn đường mà còn kể chuyện văn hóa H'Mông rất sâu sắc. Tôi
+            cảm nhận được sự "chạm" thật sự vào đời sống bản địa.
           </p>
-
-          <div class="about-features">
-            <div class="about-feature">
-              <div class="feature-check">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="feature-content">
-                <h4>Hướng dẫn viên chuyên nghiệp</h4>
-                <p>Đội ngũ HDV giàu kinh nghiệm, am hiểu văn hóa, ngôn ngữ và lịch sử bản địa.</p>
-              </div>
+          <div class="test-author">
+            <div class="test-avatar">C</div>
+            <div>
+              <div class="test-name">Nguyễn Thúc Thuỳ Chi</div>
+              <div class="test-role">Khách hàng tour Đông Bắc</div>
             </div>
+          </div>
+        </div>
 
-            <div class="about-feature">
-              <div class="feature-check">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="feature-content">
-                <h4>Lịch trình linh hoạt</h4>
-                <p>Tour được thiết kế theo nhu cầu cá nhân, có thể điều chỉnh linh hoạt theo ý bạn.</p>
-              </div>
+        <div class="test-card">
+          <span class="quote-mark">"</span>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">
+            Là người làm nghiên cứu, tôi đánh giá cao cách Viet Culture biến di sản
+            thành trải nghiệm tri thức. Tour Huế – Hội An được thiết kế công phu, có
+            chiều sâu lịch sử mà vẫn rất sinh động.
+          </p>
+          <div class="test-author">
+            <div class="test-avatar">T</div>
+            <div>
+              <div class="test-name">TS. Đinh Thị Thi</div>
+              <div class="test-role">Giảng viên Đại học</div>
             </div>
+          </div>
+        </div>
 
-            <div class="about-feature">
-              <div class="feature-check">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="feature-content">
-                <h4>Cam kết giá tốt nhất</h4>
-                <p>Chính sách giá minh bạch, không phụ phí ẩn. Cam kết hoàn tiền nếu không hài lòng.</p>
-              </div>
+        <div class="test-card">
+          <span class="quote-mark">"</span>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">
+            Tour Nhật Bản 6 ngày của Viet Culture vượt xa kỳ vọng. Lịch trình hợp lý,
+            khách sạn tốt, đặc biệt là HDV người Nhật rất tâm huyết. Cả gia đình tôi
+            đều rất hài lòng và sẽ tiếp tục đồng hành.
+          </p>
+          <div class="test-author">
+            <div class="test-avatar">V</div>
+            <div>
+              <div class="test-name">Vũ Thị Tuyết</div>
+              <div class="test-role">Khách hàng tour Nhật Bản</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <span class="quote-mark">"</span>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">
+            Tổ chức tour cho công ty 50 người đi Đà Nẵng – Hội An, mọi thứ đều trên cả
+            tuyệt vời. Điều phối chu đáo, HDV nhiệt tình, ẩm thực phong phú. Đội ngũ
+            Viet Culture thật sự chuyên nghiệp.
+          </p>
+          <div class="test-author">
+            <div class="test-avatar">V</div>
+            <div>
+              <div class="test-name">Nguyễn Thị Vân</div>
+              <div class="test-role">Trưởng phòng HC – Tập đoàn ABC</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <span class="quote-mark">"</span>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">
+            Đi tour Trung Quốc – Lệ Giang – Shangrila đúng dịp Lễ. Không lo sợ gì cả vì
+            mọi thứ đều được Viet Culture chuẩn bị kỹ. Show "Ấn tượng Lệ Giang" tặng
+            kèm thật sự rất xúc động và đáng nhớ.
+          </p>
+          <div class="test-author">
+            <div class="test-avatar">T</div>
+            <div>
+              <div class="test-name">Trần Quốc Tuấn</div>
+              <div class="test-role">Doanh nhân – Hà Nội</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <span class="quote-mark">"</span>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">
+            Đặt tour Mộc Châu mùa hoa cải. Anh HDV "Anh Giáo Du Lịch" trên TikTok rất
+            duyên và am hiểu, cả đoàn cười suốt hành trình. Giá hợp lý, dịch vụ trên
+            cả mong đợi. 5 sao xứng đáng!
+          </p>
+          <div class="test-author">
+            <div class="test-avatar">L</div>
+            <div>
+              <div class="test-name">Lê Minh Hằng</div>
+              <div class="test-role">Khách hàng tour Mộc Châu</div>
             </div>
           </div>
         </div>
@@ -1454,177 +2501,307 @@
     </div>
   </section>
 
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="testimonials" id="testimonials">
+  <!-- ============================ PARTNERS ============================ -->
+  <section class="partners">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow" style="color: var(--color-accent);">Khách hàng nói gì</span>
-        <h2 class="section-title">Những đánh giá <span class="accent" style="color: var(--color-accent);">chân thực</span></h2>
-        <p class="section-subtitle">Hơn 500 khách hàng đã tin tưởng và hài lòng với dịch vụ của Viet Culture.</p>
+      <div class="partners-head">
+        <h3>Khách hàng doanh nghiệp tiêu biểu</h3>
+        <p>Tin chọn Viet Culture cho các chương trình team building, hội nghị khách hàng & du lịch tri ân</p>
       </div>
-
-      <div class="testimonials-grid reveal">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Chuyến đi Hạ Long với Viet Culture là một trong những trải nghiệm đáng nhớ nhất của gia đình tôi. HDV nhiệt tình, lịch trình hợp lý, ăn uống ngon."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">NM</div>
-            <div class="author-info">
-              <div class="name">Nguyễn Minh</div>
-              <div class="role">Hà Nội</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Tour Sapa 3 ngày 2 đêm thật sự rất tuyệt. Mọi thứ đều được chuẩn bị chu đáo. Sẽ đặt tour với Viet Culture cho lần đi tiếp theo!"</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">TH</div>
-            <div class="author-info">
-              <div class="name">Trần Hương</div>
-              <div class="role">TP. Hồ Chí Minh</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Tour thiết kế riêng cho công ty rất chuyên nghiệp. Team building gắn kết, mọi nhân viên đều rất hài lòng. Cảm ơn Viet Culture!"</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">LP</div>
-            <div class="author-info">
-              <div class="name">Lê Phương</div>
-              <div class="role">Giám đốc nhân sự</div>
-            </div>
-          </div>
-        </div>
+      <div class="partners-logos">
+        <div class="partner-logo">VINGROUP</div>
+        <div class="partner-logo">VIETTEL</div>
+        <div class="partner-logo">FPT<br>Software</div>
+        <div class="partner-logo">VIETCOMBANK</div>
+        <div class="partner-logo">VIETJET<br>Air</div>
+        <div class="partner-logo">VINPEARL</div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CTA ============ -->
-  <section class="cta" id="contact">
+  <!-- ============================ BLOG ============================ -->
+  <section class="blog" id="blog">
     <div class="container">
-      <div class="cta-box reveal">
-        <div class="cta-content">
-          <h2>Sẵn sàng cho hành trình<br/>của riêng bạn?</h2>
-          <p>Liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí và nhận ưu đãi đặc biệt cho khách hàng mới.</p>
-          <a href="tel:+84123456789" class="btn btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Gọi tư vấn ngay
+      <div class="section-head">
+        <div class="section-eyebrow">Cẩm nang du lịch</div>
+        <h2 class="section-title">Tin tức & <em>kinh nghiệm</em></h2>
+        <p class="section-sub">
+          Cập nhật những bài viết mới nhất về điểm đến, kinh nghiệm du lịch và
+          văn hóa các vùng miền cùng Viet Culture.
+        </p>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <a href="#" class="blog-img">
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="" />
+            <span class="blog-category">Cẩm nang</span>
           </a>
-        </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> 02.05.2026</span>
+              <span><i class="far fa-comment"></i> 12 bình luận</span>
+            </div>
+            <h3 class="blog-title">Top 10 trải nghiệm không thể bỏ qua khi đến Sapa năm 2026</h3>
+            <p class="blog-excerpt">Sapa không chỉ là đỉnh Fansipan và bản Cát Cát — còn rất nhiều trải nghiệm văn hóa địa phương đang chờ bạn khám phá...</p>
+            <a href="#" class="blog-link">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <a href="#" class="blog-img">
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80" alt="" />
+            <span class="blog-category">Du lịch quốc tế</span>
+          </a>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> 28.04.2026</span>
+              <span><i class="far fa-comment"></i> 8 bình luận</span>
+            </div>
+            <h3 class="blog-title">Đi Nhật Bản mùa xuân: Hành trình 6 ngày ngắm hoa anh đào</h3>
+            <p class="blog-excerpt">Mùa xuân là thời điểm lý tưởng để khám phá Nhật Bản với sắc hồng anh đào trải dài từ Tokyo đến Kyoto...</p>
+            <a href="#" class="blog-link">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <a href="#" class="blog-img">
+            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="" />
+            <span class="blog-category">Văn hóa</span>
+          </a>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> 25.04.2026</span>
+              <span><i class="far fa-comment"></i> 15 bình luận</span>
+            </div>
+            <h3 class="blog-title">Văn hóa thờ cúng tổ tiên — Linh hồn của làng Việt Bắc Bộ</h3>
+            <p class="blog-excerpt">Trong hành trình du lịch văn hóa, hiểu về tín ngưỡng thờ cúng giúp bạn cảm nhận sâu sắc hơn bản sắc Việt Nam...</p>
+            <a href="#" class="blog-link">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
+  <!-- ============================ QUICK CONTACT ============================ -->
+  <section class="quick-contact" id="contact">
+    <div class="container qc-wrap">
+      <div class="qc-info">
+        <div class="section-eyebrow">Liên hệ tư vấn</div>
+        <h2>Cần tư vấn? <em>Chúng tôi luôn ở đây</em></h2>
+        <p>
+          Để lại thông tin, chuyên viên Viet Culture sẽ liên hệ trong 15 phút để tư vấn
+          lộ trình phù hợp nhất với nhu cầu và ngân sách của bạn — hoàn toàn miễn phí.
+        </p>
+        <ul class="qc-features">
+          <li>
+            <i class="fas fa-check"></i>
+            <div>
+              <b>Tư vấn miễn phí 24/7</b>
+              <span>Tổng đài (+84) 964 000 344 sẵn sàng phục vụ</span>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <div>
+              <b>Lộ trình cá nhân hóa</b>
+              <span>Thiết kế tour theo đúng sở thích & ngân sách</span>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <div>
+              <b>Cam kết giá tốt nhất</b>
+              <span>Hoàn 100% chênh lệch nếu tìm được giá rẻ hơn</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="qc-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Chúng tôi sẽ liên hệ trong 15 phút.');">
+        <h3>Gửi yêu cầu tư vấn</h3>
+        <p>Điền thông tin để nhận tư vấn miễn phí</p>
+        <div class="form-row">
+          <div class="form-group"><input type="text" placeholder="Họ và tên *" required /></div>
+          <div class="form-group"><input type="tel" placeholder="Số điện thoại *" required /></div>
+        </div>
+        <div class="form-group"><input type="email" placeholder="Email" /></div>
+        <div class="form-row">
+          <div class="form-group">
+            <select required>
+              <option value="">Chọn tour quan tâm *</option>
+              <option>Tour Miền Bắc (Sapa, Hạ Long...)</option>
+              <option>Tour Miền Trung (Đà Nẵng, Huế...)</option>
+              <option>Tour Miền Nam (Phú Quốc, Côn Đảo...)</option>
+              <option>Tour Trung Quốc</option>
+              <option>Tour Nhật Bản</option>
+              <option>Tour Hàn Quốc</option>
+              <option>Khác</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select>
+              <option value="">Số người tham gia</option>
+              <option>1 người</option>
+              <option>2 người</option>
+              <option>3 - 5 người</option>
+              <option>6 - 10 người</option>
+              <option>Trên 10 người</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Yêu cầu thêm (thời gian dự kiến, ngân sách, sở thích...)"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">
+          <i class="fas fa-paper-plane"></i> Gửi yêu cầu tư vấn
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================ CTA FINAL ============================ -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Bắt đầu hành trình <em>của riêng bạn</em></h2>
+      <p>
+        Hãy để Viet Culture Travel đồng hành cùng bạn viết tiếp những chương ký ức rực rỡ
+        và đầy cảm hứng trên mọi nẻo đường Việt Nam và thế giới.
+      </p>
+      <div class="cta-buttons">
+        <a href="tel:+84964000344" class="btn-primary">
+          <i class="fas fa-phone-volume"></i> Gọi ngay (+84) 964 000 344
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <i class="fas fa-envelope"></i> Để lại tin nhắn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="nav-logo">
-            <img src="assets/logo-icon.jpg" alt="Viet Culture" />
-            <div class="nav-logo-text">
-              <span class="brand">Viet Culture</span>
-              <span class="tagline">Travel your way</span>
-            </div>
-          </a>
-          <p>Công ty TNHH Du lịch và Dịch vụ Viet Culture — Mang đến những trải nghiệm du lịch chân thực và đáng nhớ nhất.</p>
+        <div class="footer-about">
+          <div class="logo">
+            <img src="logo.png" alt="Viet Culture Travel" class="logo-img footer-logo-img" />
+          </div>
+          <p>
+            Công ty TNHH Du lịch và Dịch vụ Viet Culture — đơn vị tiên phong trong dòng
+            du lịch văn hóa chuyên sâu, đồng hành cùng bạn khám phá Việt Nam, Trung Quốc,
+            Nhật Bản với những trải nghiệm chân thực nhất.
+          </p>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-            <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-            <a href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.61a8.28 8.28 0 0 0 4.84 1.55v-3.4a4.83 4.83 0 0 1-1.91-.07z"/></svg></a>
+            <a href="https://www.facebook.com/vietculture24/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://tiktok.com/vietculture24/" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Zalo"><i class="fas fa-comment-dots"></i></a>
           </div>
         </div>
 
         <div class="footer-col">
           <h4>Khám phá</h4>
           <ul>
-            <li><a href="#destinations">Điểm đến</a></li>
-            <li><a href="#services">Dịch vụ</a></li>
-            <li><a href="#about">Về chúng tôi</a></li>
-            <li><a href="#testimonials">Đánh giá</a></li>
-            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Tour Miền Bắc</a></li>
+            <li><a href="#">Tour Miền Trung</a></li>
+            <li><a href="#">Tour Miền Nam</a></li>
+            <li><a href="#">Tour Trung Quốc</a></li>
+            <li><a href="#">Tour Nhật Bản</a></li>
+            <li><a href="#">Tour theo yêu cầu</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Hỗ trợ</h4>
           <ul>
+            <li><a href="#">Về chúng tôi</a></li>
+            <li><a href="#">Cẩm nang du lịch</a></li>
             <li><a href="#">Câu hỏi thường gặp</a></li>
-            <li><a href="#">Chính sách hủy tour</a></li>
             <li><a href="#">Điều khoản dịch vụ</a></li>
-            <li><a href="#">Bảo mật thông tin</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Chính sách hoàn huỷ</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Liên hệ</h4>
-          <div class="footer-contact-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Hà Nội, Việt Nam</span>
+          <div class="footer-contact">
+            <a href="#"><i class="fas fa-map-marker-alt"></i> Số 31 đường Khúc Hạo, Phường An Hải, TP. Đà Nẵng, Việt Nam</a>
+            <a href="tel:+84988168896"><i class="fas fa-phone"></i> (+84) 988 168 896</a>
+            <a href="tel:+84964000344"><i class="fas fa-headset"></i> Hotline 24/7: (+84) 964 000 344</a>
+            <a href="mailto:vietculture24@gmail.com"><i class="fas fa-envelope"></i> vietculture24@gmail.com</a>
+            <a href="#"><i class="fas fa-id-card"></i> MST: 0402226920</a>
           </div>
-          <div class="footer-contact-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>+84 123 456 789</span>
-          </div>
-          <div class="footer-contact-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>info@vietculture.vn</span>
-          </div>
+
+          <h4 style="margin-top: 28px;">Nhận tour ưu đãi</h4>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Đăng ký thành công! Cảm ơn bạn.');">
+            <input type="email" placeholder="Email của bạn..." required />
+            <button type="submit">Đăng ký</button>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 Công ty TNHH Du lịch và Dịch vụ Viet Culture. All rights reserved.</div>
-        <div>Designed with ❤️ in Vietnam</div>
+        <div>© 2024–2026 Công ty TNHH Du lịch và Dịch vụ Viet Culture. All rights reserved.</div>
+        <div class="legal">
+          <a href="#">Điều khoản</a>
+          <a href="#">Bảo mật</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Hỗ trợ</a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- ============================ FLOATING BUTTONS ============================ -->
+  <div class="floating-buttons">
+    <button class="scroll-top" id="scrollTop" aria-label="Lên đầu trang"><i class="fas fa-chevron-up"></i></button>
+    <a href="tel:+84964000344" class="float-btn phone" aria-label="Gọi điện"><i class="fas fa-phone-volume"></i></a>
+    <a href="https://zalo.me/84964000344" class="float-btn zalo" aria-label="Zalo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.49 10.272v-.45h1.347v6.322h-.838c-.087 0-.16-.018-.215-.054a.408.408 0 0 1-.144-.18l-.1-.244a4.224 4.224 0 0 1-.395.296 2.46 2.46 0 0 1-.42.225 2.62 2.62 0 0 1-.474.143 3.02 3.02 0 0 1-.572.05c-.336 0-.65-.062-.94-.184a2.123 2.123 0 0 1-.751-.534 2.516 2.516 0 0 1-.5-.86 3.428 3.428 0 0 1-.18-1.158c0-.408.055-.79.166-1.144.111-.355.27-.664.479-.928a2.24 2.24 0 0 1 .77-.624c.305-.152.65-.227 1.034-.227.327 0 .606.05.838.151.231.1.438.236.62.408z"/><text x="2" y="20" font-family="Arial" font-weight="bold" font-size="11" fill="currentColor">Zalo</text></svg>
+    </a>
+    <a href="https://m.me/vietculture24" class="float-btn messenger" aria-label="Messenger"><i class="fab fa-facebook-messenger"></i></a>
+  </div>
+
+  <!-- ============================ SCRIPTS ============================ -->
   <script>
-    // Nav scroll effect
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
+    // Region tabs
+    const tabs = document.querySelectorAll('.region-tab');
+    const contents = document.querySelectorAll('.region-content');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        const target = document.getElementById('region-' + tab.dataset.region);
+        if (target) target.classList.add('active');
+      });
     });
 
-    // Smooth scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    // Scroll to top button
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) scrollBtn.classList.add('show');
+      else scrollBtn.classList.remove('show');
+    });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Tour favorite toggle
+    document.querySelectorAll('.tour-fav').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const icon = btn.querySelector('i');
+        if (icon.classList.contains('far')) {
+          icon.classList.replace('far', 'fas');
+          btn.style.background = 'var(--primary)';
+          btn.style.color = 'var(--cream)';
+        } else {
+          icon.classList.replace('fas', 'far');
+          btn.style.background = '';
+          btn.style.color = '';
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Mobile menu toggle (basic - có thể mở rộng sau)
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '100%';
-        navMenu.style.left = '0';
-        navMenu.style.right = '0';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.background = 'white';
-        navMenu.style.padding = '24px';
-        navMenu.style.gap = '20px';
-        navMenu.style.boxShadow = '0 8px 24px rgba(0,0,0,0.08)';
-      });
-    }
+    });
   </script>
-
 </body>
 </html>
